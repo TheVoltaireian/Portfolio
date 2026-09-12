@@ -46,6 +46,13 @@
 	--space-lg: calc( 1.25 * var( --space-unit ) );
 	--space-xl: calc( 1.5 * var( --space-unit ) );
 	--space-xxl: calc( 2 * var( --space-unit ) );
+
+    /* Border radius */
+    --border-radius-base: 4px;
+    --border-radius-medium: calc( 2 * var( --border-radius-base ) );
+    --border-radius-large: calc( 3 * var( --border-radius-base ) );
+    --border-radius-x-large: calc( 4 * var( --border-radius-base ) );
+    --border-radius-pill: 9999px;
 }
 
 :root {
@@ -61,4 +68,5 @@ h1 {
 
 div.hero {
     text-align: center;
+    line-height: var(--line-height-x-small);
 }
