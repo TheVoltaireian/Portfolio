@@ -1,8 +1,25 @@
 :root {
-    // Fonts
+    /* Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
     --font-family-primary: 'Figtree', sans-serif;
 
-    // Global styles
-    font-family: var(--font-family-primary); 
+    /* Font weights */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+
+    /* Global styles */
+    font-family: var(--font-family-primary);
+}
+
+h1 {
+    font-weight: var(--font-weight-bold);
+}
+
+div.hero {
+    text-align: center;
 }
