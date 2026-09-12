@@ -1,4 +1,5 @@
 :root {
   @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
   --font-family-primary: 'Figtree', sans-serif;
+  font-family: var(--font-family-primary);
 }/*# sourceMappingURL=styles.css.map */
