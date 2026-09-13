@@ -148,7 +148,7 @@
     /* Box shadows */
     --shadow-opacity: 0.44;
 
-    --box-shadow-color-alpha-base: oklch( 6% 0.01 var( --color-primary-oklch__h ) / var( --shadow-opacity ) );
+    --box-shadow-color-alpha-base: oklch( 6% 0.01 var( --color-progressive-oklch__h ) / var( --shadow-opacity ) );
 
     --box-shadow-border: var( --border-color-base ) 0 0 0 1px;
     --box-shadow-small: 0 0 0 1px var( --border-color-base );
@@ -266,7 +266,7 @@ div.hero {
     border: var(--border-subtle);
     border-radius: var(--border-radius-medium);
 
-    box-shadow: var(--box-shadow-medium);
+    box-shadow: var(--box-shadow-large);
 
     h1 {
         margin-block: var(--space-xs);

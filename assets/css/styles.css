@@ -122,7 +122,7 @@
   --color-link--active: var( --color-progressive--active );
   /* Box shadows */
   --shadow-opacity: 0.44;
-  --box-shadow-color-alpha-base: oklch( 6% 0.01 var( --color-primary-oklch__h ) / var( --shadow-opacity ) );
+  --box-shadow-color-alpha-base: oklch( 6% 0.01 var( --color-progressive-oklch__h ) / var( --shadow-opacity ) );
   --box-shadow-border: var( --border-color-base ) 0 0 0 1px;
   --box-shadow-small: 0 0 0 1px var( --border-color-base );
   --box-shadow-medium: 0 0.5px 0.6px var( --box-shadow-color-alpha-base ), 0 1.6px 1.8px -0.8px var( --box-shadow-color-alpha-base ), 0 4px 4.5px -1.7px var( --box-shadow-color-alpha-base ), 0 9.8px 11px -2.5px var( --box-shadow-color-alpha-base );
@@ -233,7 +233,7 @@ div.hero {
   background-origin: border-box;
   border: var(--border-subtle);
   border-radius: var(--border-radius-medium);
-  box-shadow: var(--box-shadow-medium);
+  box-shadow: var(--box-shadow-large);
 }
 div.hero h1 {
   margin-block: var(--space-xs);
