@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 :root {
+    /* My theme site is largely based on the MediaWiki skin "Citizen", hence why a lot of the variables are similar. */
+
     /* Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
     --font-family-primary: 'Figtree', sans-serif;
 
     /* SCSS variables */
@@ -14,9 +16,9 @@
     --font-weight-light: calc(var( --font-weight-base ) - 100);
     --font-weight-regular: var( --font-weight-base );
     --font-weight-medium: calc(var( --font-weight-base ) + 100);
-    --font-weight-semibold: calc(var( --font-weight-base ) + 200);
+    --font-weight-semi-bold: calc(var( --font-weight-base ) + 200);
     --font-weight-bold: calc(var( --font-weight-base ) + 300);
-    --font-weight-extrabold: calc(var( --font-weight-base ) + 400);
+    --font-weight-extra-bold: calc(var( --font-weight-base ) + 400);
     --font-weight-black: calc(var( --font-weight-base ) + 500);
 
     /* Font sizes */
@@ -48,18 +50,108 @@
 	--space-xl: calc( 1.5 * var( --space-unit ) );
 	--space-xxl: calc( 2 * var( --space-unit ) );
 
-    /* Border radius */
+    /* Border / Border radius */
+    --border-color-base: rgb( 255 255 255 / 0.1 );
+	--border-color-subtle: rgb( 255 255 255 / 0.05 );
+	--border-color-muted: rgb( 255 255 255 / 0.03 );
+	--border-color-interactive: rgb( 255 255 255 / 0.15 );
+	--border-color-disabled: var( --border-color-subtle );
+	--border-color-inverted: #fff;
+	--border-color-progressive: var( --color-progressive );
+	--border-color-progressive--hover: var( --color-progressive--hover );
+	--border-color-progressive--active: var( --color-progressive--active );
+
+    --border-width-base: 1px;
+	--border-width-thick: 2px;
+
+    --border-base: var( --border-width-base ) solid var( --border-color-base );
+	--border-subtle: var( --border-width-base ) solid var( --border-color-subtle );
+    --border-muted: var( --border-width-base ) solid var( --border-color-muted );
+    --border-interactive: var( --border-width-base ) solid var( --border-color-interactive );
+    --border-disabled: var( --border-width-base ) solid var( --border-color-disabled );
+    --border-inverted: var( --border-width-base ) solid var( --border-color-inverted );
+    --border-progressive: var( --border-width-base ) solid var( --border-color-progressive );
+
     --border-radius-base: #{$border-radius-base};
     --border-radius-medium: calc( 2 * var( --border-radius-base ) );
     --border-radius-large: calc( 3 * var( --border-radius-base ) );
     --border-radius-x-large: calc( 4 * var( --border-radius-base ) );
     --border-radius-pill: 9999px;
+    --border-radius-circle: 50%;
+
+    /* Colors */
+    /* Hover and active states are calculated by a modifier of the lightness value (e.g. hover: +2%, active: -2%) */
+	--delta-lightness-state-base: 4%;
+	--delta-lightness-hover-state: calc( var( --delta-lightness-state-base ) * 1 );
+	--delta-lightness-active-state: calc( var( --delta-lightness-state-base ) * -1 );
+	--delta-lightness-surface-base: 2%;
+
+	/* Progressive color */
+	--color-progressive-oklch__l: 60%;
+	--color-progressive-oklch__c: 0.1679;
+	--color-progressive-oklch__h: 262.29;
+
+	/* Surface color */
+	--color-surface-0-oklch__l: 14%;
+	--color-surface-0-oklch__c: 0.01;
+	--color-surface-1-oklch__l: calc( var( --color-surface-0-oklch__l ) + var( --delta-lightness-surface-base ) );
+	--color-surface-1-oklch__c: 0.015;
+	--color-surface-2-oklch__l: calc( var( --color-surface-0-oklch__l ) + ( var( --delta-lightness-surface-base ) * 2 ) );
+	--color-surface-2-oklch__c: 0.02;
+	--color-surface-3-oklch__l: calc( var( --color-surface-0-oklch__l ) + ( var( --delta-lightness-surface-base ) * 3 ) );
+	--color-surface-3-oklch__c: 0.03;
+	--color-surface-4-oklch__l: calc( var( --color-surface-0-oklch__l ) + ( var( --delta-lightness-surface-base ) * 4 ) );
+	--color-surface-4-oklch__c: 0.04;
+
+	--color-surface-0: oklch( var( --color-surface-0-oklch__l ) var( --color-surface-0-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-surface-1: oklch( var( --color-surface-1-oklch__l ) var( --color-surface-1-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-surface-1--hover: oklch( calc( var( --color-surface-1-oklch__l ) + var( --delta-lightness-hover-state ) ) var( --color-surface-1-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-surface-1--active: oklch( calc( var( --color-surface-1-oklch__l ) + var( --delta-lightness-active-state ) ) var( --color-surface-1-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-surface-2: oklch( var( --color-surface-2-oklch__l ) var( --color-surface-2-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-surface-2--hover: oklch( calc( var( --color-surface-2-oklch__l ) + var( --delta-lightness-hover-state ) ) var( --color-surface-2-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-surface-2--active: oklch( calc( var( --color-surface-2-oklch__l ) + var( --delta-lightness-active-state ) ) var( --color-surface-2-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-surface-3: oklch( var( --color-surface-3-oklch__l ) var( --color-surface-3-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-surface-4: oklch( var( --color-surface-4-oklch__l ) var( --color-surface-4-oklch__c ) var( --color-progressive-oklch__h ) );
+
+    --background-color-progressive: var( --color-progressive );
+	--background-color-progressive--hover: var( --color-progressive--hover );
+	--background-color-progressive--active: var( --color-progressive--active );
+
+    /* Text color */
+    --color-emphasized-oklch__l: 93%;
+	--color-emphasized-oklch__c: 0.03;
+	--color-base-oklch__l: 80%;
+	--color-base-oklch__c: 0.05;
+	--color-subtle-oklch__l: 70%;
+	--color-subtle-oklch__c: 0.07;
+	--color-placeholder-oklch__l: 60%;
+	--color-placeholder-oklch__c: 0.03;
+	--color-disabled-oklch__l: 50%;
+	--color-disabled-oklch__c: 0.01;
+
+    --color-progressive: oklch( var( --color-progressive-oklch__l ) var( --color-progressive-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-progressive--hover: oklch( calc( var( --color-progressive-oklch__l ) + var( --delta-lightness-hover-state ) ) var( --color-progressive-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-progressive--active: oklch( calc( var( --color-progressive-oklch__l ) + var( --delta-lightness-active-state ) ) var( --color-progressive-oklch__c ) var( --color-progressive-oklch__h ) );
+
+    --color-base: oklch( var( --color-base-oklch__l ) var( --color-base-oklch__c ) var( --color-progressive-oklch__h ) );
+    --color-base--hover: oklch( calc( var( --color-base-oklch__l ) + var( --delta-lightness-hover-state ) ) var( --color-base-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-emphasized: oklch( var( --color-emphasized-oklch__l ) var( --color-emphasized-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-subtle: oklch( var( --color-subtle-oklch__l ) var( --color-subtle-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-placeholder: oklch( var( --color-placeholder-oklch__l ) var( --color-placeholder-oklch__c ) var( --color-progressive-oklch__h ) );
+	--color-disabled: oklch( var( --color-disabled-oklch__l ) var( --color-disabled-oklch__c ) var( --color-progressive-oklch__h ) );
+
+    --color-link: var( --color-progressive );
+	--color-link--hover: var( --color-progressive--hover );
+	--color-link--active: var( --color-progressive--active );
 }
 
 :root {
     font-family: var(--font-family-primary);
     font-size: var(--font-size-medium);
     line-height: var(--line-height-medium);
+
+    background: var(--color-surface-0);
+    color: var(--color-base);
 }
 
 h1 {
@@ -67,7 +159,16 @@ h1 {
     font-size: var(--font-size-xxx-large);
 }
 
+h1#WildVoltaireian {
+    color: var(--color-progressive);
+}
+
 div.hero {
     text-align: center;
     line-height: var(--line-height-x-small);
+    margin: var(--space-lg);
+    padding: var(--space-sm);
+    background: var(--color-surface-1);
+    border: var(--border-subtle);
+    border-radius: var(--border-radius-medium);
 }
