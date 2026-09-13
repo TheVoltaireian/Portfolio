@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 :root {
-  /* My theme site is largely based on the MediaWiki skin "Citizen", hence why a lot of the variables are similar. */
+  /* My theme site is largely based on the MediaWiki skin "Citizen", hence why a lot of the variables are from that skin. */
   /* Fonts */
   --font-family-primary: 'Figtree', sans-serif;
   /* SCSS variables */
@@ -133,7 +133,10 @@
   --backdrop-opacity: 0.65;
 }
 
+/* Default styles */
 :root {
+  direction: ltr;
+  font-weight: var(--font-weight-regular);
   font-family: var(--font-family-primary);
   font-size: var(--font-size-medium);
   line-height: var(--line-height-medium);
@@ -141,10 +144,15 @@
   color: var(--color-base);
 }
 
-hr {
-  margin-block: var(--space-md);
-  border: 0;
-  border-top: var(--border-base);
+b, strong {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+blockquote {
+  font-style: italic;
+  text-wrap: pretty;
+  font-size: var(--font-size-medium);
+  line-height: var(--line-height-medium);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -190,11 +198,27 @@ h4 {
   line-height: var(--line-height-large);
 }
 
+hr {
+  margin-block: var(--space-md);
+  border: 0;
+  border-top: var(--border-base);
+}
+
 p {
   margin-block: var(--space-md);
   overflow-wrap: break-word;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: var(--border-subtle);
+  border-radius: var(--border-radius-base);
+}
+
+/* MAIN PAGE */
 div.hero {
   text-align: left;
   line-height: var(--line-height-x-small);
