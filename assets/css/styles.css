@@ -136,6 +136,7 @@
   --backdrop-opacity: 0.65;
 }
 
+/* Mixins */
 /* Default styles */
 :root {
   direction: ltr;
@@ -250,6 +251,18 @@ img {
 }
 
 /* MAIN PAGE */
+@keyframes hero {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+    filter: blur(20px);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    filter: none;
+  }
+}
 div.hero {
   display: flex;
   flex-direction: column;
@@ -259,6 +272,7 @@ div.hero {
   margin: var(--space-lg);
   padding: var(--space-xl) var(--space-md);
   text-align: center;
+  animation: hero 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 div.hero h1 {
   margin-block: 0;
