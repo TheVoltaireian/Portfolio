@@ -255,7 +255,7 @@ div.hero {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  min-height: calc(40vh - var(--space-xl) * 4 - var(--space-xs) * 2);
+  min-height: calc(40vh - var(--space-xl) * 4 - var(--space-xs) * 3);
   margin: var(--space-lg);
   padding: var(--space-xl) var(--space-md);
   text-align: center;
