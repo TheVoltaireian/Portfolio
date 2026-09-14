@@ -255,7 +255,7 @@ div.hero {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  height: calc(40vh - var(--space-xl) * 4 - var(--space-xs) * 2);
+  min-height: calc(40vh - var(--space-xl) * 4 - var(--space-xs) * 2);
   margin: var(--space-lg);
   padding: var(--space-xl) var(--space-md);
   text-align: center;
@@ -271,11 +271,11 @@ div.hero p {
   font-weight: var(--font-weight-medium);
 }
 div.hero p.sub {
-  color: var(--color-subtle);
+  color: var(--color-placeholder);
   font-size: var(--font-size-small);
   line-height: var(--line-height-medium);
 }
 div.hero hr {
   margin-block: var(--space-md);
-  width: 10%;
+  width: 3rem;
 }/*# sourceMappingURL=styles.css.map */
