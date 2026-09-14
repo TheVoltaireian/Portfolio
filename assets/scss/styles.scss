@@ -296,13 +296,21 @@ div.hero {
     text-align: center;
 
     h1 {
-        margin-block: var(--space-xs);
+        margin-block: 0;
         line-height: initial;
         font-size: var(--font-size-6x-large);
     }
 
     p {
-        margin-block: var(--space-xs);
+        margin-block: 0;
+        line-height: var(--line-height-small);
+        font-weight: var(--font-weight-medium);
+
+        &.sub {
+            color: var(--color-subtle);
+            font-size: var(--font-size-small);
+            line-height: var(--line-height-medium);
+        }
     }
 
     hr {
