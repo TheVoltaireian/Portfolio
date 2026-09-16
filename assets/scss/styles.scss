@@ -502,6 +502,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+	align-items: center;
     position: relative;
 
     min-height: calc(40vh - var(--space-xl) * 4 - var(--space-xs) * 3);
@@ -520,8 +521,6 @@ header {
         margin-block: 0;
         line-height: initial;
         font-size: var(--font-size-6x-large);
-
-		width: max-content;
 
         a {
             cursor: text;
