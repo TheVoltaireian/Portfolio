@@ -423,10 +423,10 @@ button.x:hover {
   transition: var(--transition-hover--slow);
 }
 button.x:hover {
-  background: oklch(calc(0 + var( --delta-lightness-hover-state )) 0 0);
+  background: oklch(calc(0 + var( --delta-lightness-hover-state )) 0 0) !important;
 }
 button.x:active {
-  background: oklch(calc(0 + var( --delta-lightness-active-state )) 0 0);
+  background: oklch(calc(0 + var( --delta-lightness-active-state )) 0 0) !important;
 }
 
 * {
