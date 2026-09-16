@@ -476,16 +476,17 @@ button {
     }
 
     &.x {
-		background: oklch(0 0 0) !important;
+        --x-bg: oklch(0 0 0);
+		background: var(--x-bg) !important;
 		
         @include button-text-on-hover;
 
 		@include hover {
-			background: oklch(calc(0 + var( --delta-lightness-hover-state )) 0 0) !important;
+			--x-bg: oklch(calc(0 + var( --delta-lightness-hover-state )) 0 0);
 		}
 
 		@include active {
-			background: oklch(calc(0 + var( --delta-lightness-active-state )) 0 0) !important;
+			--x-bg: oklch(calc(0 + var( --delta-lightness-active-state )) 0 0);
 		}
     }
 }
