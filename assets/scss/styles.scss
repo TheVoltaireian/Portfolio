@@ -24,7 +24,7 @@
         opacity: 0;
         max-width: 0;
         white-space: nowrap;
-        transition: var(--transition-hover);
+        transition: var(--transition-hover--slow);
     }
 
     @include hover {
@@ -34,7 +34,7 @@
         .footer__subtitle-socials--text {
             opacity: 1;
             max-width: 150px;
-            transition: var(--transition-hover);
+            transition: var(--transition-hover--slow);
         }
     }
 }
