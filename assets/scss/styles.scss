@@ -58,7 +58,7 @@
 	}
 	83.3% {
 		background-image: url('../images/backgrounds/summer_day4/6.png');
-	},
+	}
 	100% {
 		background-image: url('../images/backgrounds/summer_day4/1.png');
 	}
@@ -622,13 +622,17 @@ footer {
 			align-items: center;
             gap: var(--space-xxs);
 
+            button {
+                height: 30px;
+            }
+
 			.divider {
-	            color: var(--color-placeholder);
-	            font-size: var(--font-size-small);
-	            line-height: 1;
-	            user-select: none;
-	            flex-shrink: 0;
-	        }
+                color: var(--color-placeholder);
+                font-size: var(--font-size-small);
+                line-height: 1;
+                user-select: none;
+                flex-shrink: 0;
+            }
         }
     }
 }
