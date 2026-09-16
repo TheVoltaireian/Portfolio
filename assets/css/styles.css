@@ -540,4 +540,11 @@ footer .footer__subtitle .footer__subtitle-socials {
   display: flex;
   flex-direction: row;
   gap: var(--space-xxs);
+}
+footer .footer__subtitle .footer__subtitle-socials .divider {
+  color: var(--color-placeholder);
+  font-size: var(--font-size-small);
+  line-height: 1;
+  user-select: none;
+  flex-shrink: 0;
 }/*# sourceMappingURL=styles.css.map */
