@@ -610,6 +610,14 @@ footer {
             display: flex;
             flex-direction: row;
             gap: var(--space-xxs);
+
+			.divider {
+	            color: var(--color-placeholder);
+	            font-size: var(--font-size-small);
+	            line-height: 1;
+	            user-select: none;
+	            flex-shrink: 0;
+	        }
         }
     }
 }
