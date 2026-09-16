@@ -399,6 +399,7 @@ button.mail:hover {
   transition: var(--transition-hover--slow);
 }
 button.x {
+  background: oklch(0 0 0) !important;
   overflow: hidden;
   gap: 0;
   padding: var(--space-xxs);
@@ -420,6 +421,12 @@ button.x:hover .footer__subtitle-socials--text {
 }
 button.x:hover {
   transition: var(--transition-hover--slow);
+}
+button.x:hover {
+  background: oklch(calc(0 + var( --delta-lightness-hover-state )) 0 0);
+}
+button.x:active {
+  background: oklch(calc(0 + var( --delta-lightness-active-state )) 0 0);
 }
 
 * {
