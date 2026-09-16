@@ -398,29 +398,29 @@ button.mail:hover .footer__subtitle-socials--text {
 button.mail:hover {
   transition: var(--transition-hover--slow);
 }
-button.x, button.discord {
+button.x, button.discord, button.github {
   color: var(--color-emphasized) !important;
   border: var(--border-interactive) !important;
   overflow: hidden;
   gap: 0;
   padding: var(--space-xxs);
 }
-button.x .footer__subtitle-socials--text, button.discord .footer__subtitle-socials--text {
+button.x .footer__subtitle-socials--text, button.discord .footer__subtitle-socials--text, button.github .footer__subtitle-socials--text {
   opacity: 0;
   max-width: 0;
   white-space: nowrap;
   transition: var(--transition-hover--slow);
 }
-button.x:hover, button.discord:hover {
+button.x:hover, button.discord:hover, button.github:hover {
   gap: var(--space-xxs);
   padding: var(--space-xxs) var(--space-xs);
 }
-button.x:hover .footer__subtitle-socials--text, button.discord:hover .footer__subtitle-socials--text {
+button.x:hover .footer__subtitle-socials--text, button.discord:hover .footer__subtitle-socials--text, button.github:hover .footer__subtitle-socials--text {
   opacity: 1;
   max-width: 150px;
   transition: var(--transition-hover--slow);
 }
-button.x:hover, button.discord:hover {
+button.x:hover, button.discord:hover, button.github:hover {
   transition: var(--transition-hover--slow);
 }
 button.x {
@@ -450,6 +450,21 @@ button.discord:hover {
 }
 button.discord:active {
   --disc-bg: oklch(calc(57.74% + var(--delta-lightness-active-state)) 0.2091 273.85);
+  border: var(--border-interactive--active) !important;
+  transition: var(--transition-hover--slow);
+}
+button.github {
+  --git-bg: oklch(70.1% 0.2127 145.72);
+  background: var(--git-bg) !important;
+}
+button.github:hover {
+  --git-bg: oklch(calc(70.1% + var(--delta-lightness-hover-state)) 0.2127 145.72);
+  border: var(--border-interactive--hover) !important;
+  color: var(--color-inverted) !important;
+  transition: var(--transition-hover--slow);
+}
+button.github:active {
+  --git-bg: oklch(calc(70.1% + var(--delta-lightness-active-state)) 0.2127 145.72);
   border: var(--border-interactive--active) !important;
   transition: var(--transition-hover--slow);
 }
