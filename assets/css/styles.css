@@ -554,6 +554,7 @@ footer .footer__subtitle .footer__subtitle-socials {
 }
 footer .footer__subtitle .footer__subtitle-socials button {
   height: 30px;
+  transition: var(--transition-hover--slow);
 }
 footer .footer__subtitle .footer__subtitle-socials .divider {
   color: var(--color-placeholder);

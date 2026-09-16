@@ -624,6 +624,7 @@ footer {
 
             button {
                 height: 30px;
+                transition: var(--transition-hover--slow);
             }
 
 			.divider {
