@@ -39,6 +39,31 @@
     }
 }
 
+/* Background animation */
+@keyframes background {
+	0% {
+		background-image: url('../images/backgrounds/summer_day4/1.png');
+	},
+	16.6% {
+		background-image: url('../images/backgrounds/summer_day4/2.png');
+	},
+	33.3% {
+		background-image: url('../images/backgrounds/summer_day4/3.png');
+	},
+	50% {
+		background-image: url('../images/backgrounds/summer_day4/4.png');
+	},
+	66.6% {
+		background-image: url('../images/backgrounds/summer_day4/5.png');
+	},
+	83.3% {
+		background-image: url('../images/backgrounds/summer_day4/6.png');
+	},
+	100% {
+		background-image: url('../images/backgrounds/summer_day4/1.png');
+	},
+}
+
 /* SCSS variables */
 $font-weight-base: 400;
 $font-size-base: 1rem;
@@ -276,7 +301,9 @@ body {
         background-position: top;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url('../images/backgrounds/summer_day4/4.png');
+		animation: background 12s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+		animation-iteration-count: infinite;
+		transition: var(--transition-hover--fast);
         filter: blur(5px);
         mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
         z-index: -1;
