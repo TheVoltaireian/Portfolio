@@ -398,70 +398,59 @@ button.mail:hover .footer__subtitle-socials--text {
 button.mail:hover {
   transition: var(--transition-hover--slow);
 }
-button.x {
-  --x-bg: oklch(0 0 0);
-  background: var(--x-bg) !important;
+button.x, button.discord {
+  color: var(--color-emphasized) !important;
+  border: var(--border-interactive) !important;
   overflow: hidden;
   gap: 0;
   padding: var(--space-xxs);
 }
-button.x .footer__subtitle-socials--text {
+button.x .footer__subtitle-socials--text, button.discord .footer__subtitle-socials--text {
   opacity: 0;
   max-width: 0;
   white-space: nowrap;
   transition: var(--transition-hover--slow);
 }
-button.x:hover {
+button.x:hover, button.discord:hover {
   gap: var(--space-xxs);
   padding: var(--space-xxs) var(--space-xs);
 }
-button.x:hover .footer__subtitle-socials--text {
+button.x:hover .footer__subtitle-socials--text, button.discord:hover .footer__subtitle-socials--text {
   opacity: 1;
   max-width: 150px;
   transition: var(--transition-hover--slow);
 }
-button.x:hover {
+button.x:hover, button.discord:hover {
   transition: var(--transition-hover--slow);
 }
+button.x {
+  --x-bg: oklch(0% 0 0);
+  background: var(--x-bg) !important;
+}
 button.x:hover {
-  --x-bg: oklch(calc(0 + var( --delta-lightness-hover-state )) 0 0);
+  --x-bg: oklch(var(--delta-lightness-hover-state) 0 0);
+  border: var(--border-interactive--hover) !important;
+  color: var(--color-inverted) !important;
   transition: var(--transition-hover--slow);
 }
 button.x:active {
-  --x-bg: oklch(calc(0 + var( --delta-lightness-active-state )) 0 0);
+  --x-bg: oklch(0% 0 0);
+  border: var(--border-interactive--active) !important;
   transition: var(--transition-hover--slow);
 }
 button.discord {
   --disc-bg: oklch(57.74% 0.2091 273.85);
   background: var(--disc-bg) !important;
-  overflow: hidden;
-  gap: 0;
-  padding: var(--space-xxs);
-}
-button.discord .footer__subtitle-socials--text {
-  opacity: 0;
-  max-width: 0;
-  white-space: nowrap;
-  transition: var(--transition-hover--slow);
 }
 button.discord:hover {
-  gap: var(--space-xxs);
-  padding: var(--space-xxs) var(--space-xs);
-}
-button.discord:hover .footer__subtitle-socials--text {
-  opacity: 1;
-  max-width: 150px;
-  transition: var(--transition-hover--slow);
-}
-button.discord:hover {
-  transition: var(--transition-hover--slow);
-}
-button.discord:hover {
-  --disc-bg: oklch(calc(57.74% + var( --delta-lightness-hover-state )) 0.2091 273.85);
+  --disc-bg: oklch(calc(57.74% + var(--delta-lightness-hover-state)) 0.2091 273.85);
+  border: var(--border-interactive--hover) !important;
+  color: var(--color-inverted) !important;
   transition: var(--transition-hover--slow);
 }
 button.discord:active {
-  --disc-bg: oklch(calc(57.74% + var( --delta-lightness-active-state )) 0.2091 273.85);
+  --disc-bg: oklch(calc(57.74% + var(--delta-lightness-active-state)) 0.2091 273.85);
+  border: var(--border-interactive--active) !important;
   transition: var(--transition-hover--slow);
 }
 

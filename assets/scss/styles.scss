@@ -475,34 +475,42 @@ button {
         @include button-text-on-hover;
     }
 
-    &.x {
-        --x-bg: oklch(0 0 0);
-		background: var(--x-bg) !important;
-		
+    &.x, &.discord {
+        color: var(--color-emphasized) !important;
+        border: var(--border-interactive) !important;
         @include button-text-on-hover;
+    }
 
-		@include hover {
-			--x-bg: oklch(calc(0 + var( --delta-lightness-hover-state )) 0 0);
-		}
+    &.x {
+        --x-bg: oklch(0% 0 0);
+        background: var(--x-bg) !important;
 
-		@include active {
-			--x-bg: oklch(calc(0 + var( --delta-lightness-active-state )) 0 0);
-		}
+        @include hover {
+            --x-bg: oklch(var(--delta-lightness-hover-state) 0 0);
+            border: var(--border-interactive--hover) !important;
+            color: var(--color-inverted) !important;
+        }
+
+        @include active {
+            --x-bg: oklch(0% 0 0);
+            border: var(--border-interactive--active) !important;
+        }
     }
 
     &.discord {
         --disc-bg: oklch(57.74% 0.2091 273.85);
         background: var(--disc-bg) !important;
 
-        @include button-text-on-hover;
-
         @include hover {
-			--disc-bg: oklch(calc(57.74% + var( --delta-lightness-hover-state )) 0.2091 273.85);
-		}
+            --disc-bg: oklch(calc(57.74% + var(--delta-lightness-hover-state)) 0.2091 273.85);
+            border: var(--border-interactive--hover) !important;
+            color: var(--color-inverted) !important;
+        }
 
-		@include active {
-			--disc-bg: oklch(calc(57.74% + var( --delta-lightness-active-state )) 0.2091 273.85);
-		}
+        @include active {
+            --disc-bg: oklch(calc(57.74% + var(--delta-lightness-active-state)) 0.2091 273.85);
+            border: var(--border-interactive--active) !important;
+        }
     }
 }
 
