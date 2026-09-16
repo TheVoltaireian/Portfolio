@@ -1,16 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
+/* Mixins */
+@mixin hover {
+    &:hover {
+        @content;
+        transition: var(--transition-hover);
+    }
+}
+
+@mixin active {
+    &:active {
+        @content;
+        transition: var(--transition-hover);
+    }
+}
+
+@mixin button-text-on-hover {
+    overflow: hidden;
+    gap: 0;
+    padding: var(--space-xxs);
+
+    .footer__subtitle-socials--text {
+        opacity: 0;
+        max-width: 0;
+        white-space: nowrap;
+        transition: var(--transition-hover);
+    }
+
+    @include hover {
+        gap: var(--space-xxs);
+        padding: var(--space-xxs) var(--space-xs);
+
+        .footer__subtitle-socials--text {
+            opacity: 1;
+            max-width: 150px;
+            transition: var(--transition-hover);
+        }
+    }
+}
+
+/* SCSS variables */
+$font-weight-base: 400;
+$font-size-base: 1rem;
+$space-unit: 1rem;
+$border-radius-base: 4px;
+$transition-hover: var(--transition-duration-medium) var(--transition-timing-function-ease);
+$transition-menu: var(--transition-duration-medium) var(--transition-timing-function-ease-out);
+
+/* Breakpoints */
+/* Styles cascade from desktop in both directions — smaller breakpoints cascade down (tablet > mobile landscape > mobile portrait) and larger breakpoints cascade up (1280px > 1440px > 1920px) */
+$breakpoint-xxl: 1920px;
+$breakpoint-xl: 1440px;
+$breakpoint-lg: 1280px;
+$breakpoint-md: 992px;
+$breakpoint-sm: 991px;
+$breakpoint-xs: 767px;
+$breakpoint-xxs: 479px;
+
 :root {
     /* My theme site is largely based on the MediaWiki skin "Citizen", hence why a lot of the variables are from that skin. */
 
     /* Fonts */
     --font-family-primary: 'Figtree', sans-serif;
-
-    /* SCSS variables */
-    $font-weight-base: 400;
-    $font-size-base: 1rem;
-    $space-unit: 1rem;
-    $border-radius-base: 4px;
 
     /* Font weights */
     --font-weight-base: #{$font-weight-base};
@@ -35,8 +86,8 @@
     --font-size-5x-large: calc(2.5 * var( --font-size-base ));
     --font-size-6x-large: calc(3 * var( --font-size-base ));
 
-
     /* Line heights */
+    --line-height-xx-small:
     --line-height-x-small: 1.25rem;
 	--line-height-small: 1.375rem;
 	--line-height-medium: 1.625rem;
@@ -56,26 +107,36 @@
 	--space-xxl: calc( 2 * var( --space-unit ) );
 
     /* Border / Border radius */
-    --border-color-base: rgb( 255 255 255 / 0.1 );
-	--border-color-subtle: rgb( 255 255 255 / 0.05 );
-	--border-color-muted: rgb( 255 255 255 / 0.03 );
-	--border-color-interactive: rgb( 255 255 255 / 0.15 );
-	--border-color-disabled: var( --border-color-subtle );
-	--border-color-inverted: #fff;
-	--border-color-progressive: var( --color-progressive );
-	--border-color-progressive--hover: var( --color-progressive--hover );
-	--border-color-progressive--active: var( --color-progressive--active );
-
     --border-width-base: 1px;
 	--border-width-thick: 2px;
 
-    --border-base: var( --border-width-base ) solid var( --border-color-base );
-	--border-subtle: var( --border-width-base ) solid var( --border-color-subtle );
-    --border-muted: var( --border-width-base ) solid var( --border-color-muted );
-    --border-interactive: var( --border-width-base ) solid var( --border-color-interactive );
-    --border-disabled: var( --border-width-base ) solid var( --border-color-disabled );
-    --border-inverted: var( --border-width-base ) solid var( --border-color-inverted );
-    --border-progressive: var( --border-width-base ) solid var( --border-color-progressive );
+    --border-style-solid: solid;
+    --border-style-dashed: dashed;
+    --border-style-inset: inset;
+
+    --border-color-progressive: var( --color-progressive );
+	--border-color-progressive--hover: var( --color-progressive--hover );
+	--border-color-progressive--active: var( --color-progressive--active );
+    --border-color-base: rgb( 255 255 255 / 0.1 );
+	--border-color-subtle: rgb( 255 255 255 / 0.05 );
+	--border-color-muted: rgb( 255 255 255 / 0.03 );
+	--border-color-interactive: rgb( 255 255 255 / 0.1 );
+    --border-color-interactive--hover: rgb(255 255 255 / 0.2);
+    --border-color-interactive--active: rgb(255 255 255 / 0.3);
+	--border-color-disabled: rgb( 255 255 255 / 0.025 );
+	--border-color-inverted: #fff;
+
+    --border-base: var( --border-width-base ) var( --border-style-solid ) var( --border-color-base );
+	--border-subtle: var( --border-width-base ) var( --border-style-solid ) var( --border-color-subtle );
+    --border-muted: var( --border-width-base ) var( --border-style-solid ) var( --border-color-muted );
+    --border-interactive: var( --border-width-base ) var( --border-style-solid ) var( --border-color-interactive );
+    --border-interactive--hover: var( --border-width-base ) var( --border-style-solid ) var( --border-color-interactive--hover );
+    --border-interactive--active: var( --border-width-base ) var( --border-style-solid ) var( --border-color-interactive--active );
+    --border-disabled: var( --border-width-base ) var( --border-style-solid ) var( --border-color-disabled );
+    --border-inverted: var( --border-width-base ) var( --border-style-solid ) var( --border-color-inverted );
+    --border-progressive: var( --border-width-base ) var( --border-style-solid ) var( --border-color-progressive );
+    --border-progressive--hover: var( --border-width-base ) var( --border-style-solid ) var( --border-color-progressive--hover );
+    --border-progressive--active: var( --border-width-base ) var( --border-style-solid ) var( --border-color-progressive--active );
 
     --border-radius-base: #{$border-radius-base};
     --border-radius-medium: calc( 2 * var( --border-radius-base ) );
@@ -144,6 +205,7 @@
 	--color-subtle: oklch( var( --color-subtle-oklch__l ) var( --color-subtle-oklch__c ) var( --color-progressive-oklch__h ) );
 	--color-placeholder: oklch( var( --color-placeholder-oklch__l ) var( --color-placeholder-oklch__c ) var( --color-progressive-oklch__h ) );
 	--color-disabled: oklch( var( --color-disabled-oklch__l ) var( --color-disabled-oklch__c ) var( --color-progressive-oklch__h ) );
+    --color-inverted: #fff;
 
     --color-link: var( --color-progressive );
 	--color-link--hover: var( --color-progressive--hover );
@@ -163,19 +225,16 @@
     --backdrop-filter-blur: blur( 2px );
 	--backdrop-filter-frosted-glass: blur( 8px ) saturate( 140% );
     --backdrop-opacity: 0.65;
-}
 
-/* Mixins */
-@mixin hover {
-    &:hover {
-        @content;
-    }
-}
+    /* Transitions */
+    --transition-timing-function-ease: cubic-bezier( 0.2, 0, 0, 1 );
+	--transition-timing-function-ease-in: cubic-bezier( 0.3, 0, 0.8, 0.15 );
+	--transition-timing-function-ease-out: cubic-bezier( 0.05, 0.7, 0.1, 1 );
 
-@mixin active {
-    &:active {
-        @content;
-    }
+    --transition-hover: #{$transition-hover};
+	--transition-menu: #{$transition-menu};
+	--transition-duration-base: 100ms;
+	--transition-duration-medium: 250ms;
 }
 
 /* Default styles */
@@ -303,19 +362,19 @@ img {
     border-radius: var(--border-radius-base);
 }
 
-button {
-    border: var(--border-subtle) !important;
-    border-radius: var(--border-radius-base) !important;
-    background-color: var(--color-surface-2) !important;
+a {
+    color: var(--color-link);
+}
 
-    color: var(--color-emphasized);
+button {
+    border-radius: var(--border-radius-base) !important;
 
     display: flex;
     min-width: 0;
     gap: var(--space-xxs);
     align-items: center;
 
-    padding: var(--space-xxs) var(--space-sm);
+    padding: var(--space-xxs) var(--space-xs);
 
     font-family: var(--font-family-primary);
     font-weight: var(--font-weight-semi-bold);
@@ -323,12 +382,53 @@ button {
 
     cursor: pointer;
 
-    @include hover {
-        background-color: var(--color-surface-2--hover);
+    transition: var(--transition-hover);
+
+    .primary {
+        background: var(--background-color-progressive);
+        color: var(--color-inverted);
+
+        @include hover {
+            background: var(--background-color-progressive--hover)
+        }
+
+        @include active {
+            background: var(--background-color-progressive--active)
+        }
     }
 
-    @include active {
-        background-color: var(--color-surface-2--active);
+    &.secondary-1 {
+        background: transparent !important;
+        color: var(--color-progressive) !important;
+        border: var(--border-progressive) !important;
+
+        @include hover {
+            color: var(--color-progressive--hover) !important;
+            border: var(--border-progressive--hover) !important;
+        }
+
+        @include active {
+            color: var(--color-progressive--active) !important;
+            border: var(--border-progressive--active) !important;
+        }
+    }
+
+    &.secondary-2 {
+        background: var(--color-surface-2) !important;
+        color: var(--color-emphasized) !important;
+        border: var(--border-interactive) !important;
+
+        @include hover {
+            background: var(--color-surface-2--hover) !important;
+            border: var(--border-interactive--hover) !important;
+            color: var(--color-inverted) !important;
+        }
+
+        @include active {
+            background: var(--color-surface-2--active) !important;
+            border: var(--border-interactive--active) !important;
+            color: var(--color-base) !important;
+        }
     }
 
     img {
@@ -339,6 +439,14 @@ button {
         height: auto;
         filter: drop-shadow(0px 1000px 0 oklch(93% 0.03 262.29));
         transform: translateY(-1000px);
+    }
+
+    &.mail {
+        @include button-text-on-hover;
+    }
+
+    &.x {
+        @include button-text-on-hover;
     }
 }
 
@@ -373,6 +481,7 @@ header {
     text-align: center;
 
     animation: hero 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+
     @media (prefers-reduced-motion: reduce) {
         animation: none;
     }
@@ -420,6 +529,15 @@ footer {
         gap: var(--space-sm);
         align-items: center;
 
+        @media screen and (max-width: $breakpoint-xs) {
+            justify-content: center;
+        }
+        @media screen and (max-width: $breakpoint-xxs) {
+            .divider, img {
+                display: none; /* Experimental */
+            }
+        }
+
         .divider {
             color: var(--color-emphasized);
             font-size: var(--font-size-small);
@@ -445,6 +563,11 @@ footer {
         justify-content: space-between;
         align-items: center;
 
+        @media screen and (max-width: $breakpoint-xs) {
+            flex-direction: column;
+            gap: var(--space-xxs);
+        }
+
         .footer__subtitle-text {
             color: var(--color-placeholder);
         }
@@ -452,7 +575,7 @@ footer {
         .footer__subtitle-socials {
             display: flex;
             flex-direction: row;
-            gap: var(--space-xs);
+            gap: var(--space-xxs);
         }
     }
 }
