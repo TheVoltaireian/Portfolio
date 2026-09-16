@@ -177,7 +177,7 @@
   --transition-timing-function-ease: cubic-bezier( 0.2, 0, 0, 1 );
   --transition-timing-function-ease-in: cubic-bezier( 0.3, 0, 0.8, 0.15 );
   --transition-timing-function-ease-out: cubic-bezier( 0.05, 0.7, 0.1, 1 );
-  --transition-hover--slow: var(--transition-duration-large) var(--transition-timing-function-ease)
+  --transition-hover--slow: var(--transition-duration-large) var(--transition-timing-function-ease);
   --transition-hover--fast: var(--transition-duration-medium) var(--transition-timing-function-ease);
   --transition-menu: var(--transition-duration-medium) var(--transition-timing-function-ease-out);
   --transition-duration-base: 100ms;
