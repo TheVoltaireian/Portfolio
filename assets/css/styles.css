@@ -456,6 +456,7 @@ header {
   }
 }
 header h1 {
+  margin: auto;
   margin-block: 0;
   line-height: initial;
   font-size: var(--font-size-6x-large);
