@@ -443,7 +443,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   position: relative;
   min-height: calc(40vh - var(--space-xl) * 4 - var(--space-xs) * 3);
   margin: var(--space-lg);
