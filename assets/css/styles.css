@@ -460,7 +460,6 @@ header h1 {
   margin-block: 0;
   line-height: initial;
   font-size: var(--font-size-6x-large);
-  width: max-content;
 }
 header h1 a {
   cursor: text;
