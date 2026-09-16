@@ -153,10 +153,12 @@
   --transition-timing-function-ease: cubic-bezier( 0.2, 0, 0, 1 );
   --transition-timing-function-ease-in: cubic-bezier( 0.3, 0, 0.8, 0.15 );
   --transition-timing-function-ease-out: cubic-bezier( 0.05, 0.7, 0.1, 1 );
-  --transition-hover: var(--transition-duration-medium) var(--transition-timing-function-ease);
+  --transition-hover--slow: var(--transition-duration-large) var(--transition-timing-function-ease)
+  --transition-hover--fast: var(--transition-duration-medium) var(--transition-timing-function-ease);
   --transition-menu: var(--transition-duration-medium) var(--transition-timing-function-ease-out);
   --transition-duration-base: 100ms;
   --transition-duration-medium: 250ms;
+  --transition-duration-large: 350ms;
 }
 
 /* Default styles */
@@ -293,7 +295,7 @@ button {
   font-weight: var(--font-weight-semi-bold);
   font-size: var(--font-size-medium);
   cursor: pointer;
-  transition: var(--transition-hover);
+  transition: var(--transition-hover--slow);
 }
 button .primary {
   background: var(--background-color-progressive);
@@ -301,11 +303,11 @@ button .primary {
 }
 button .primary:hover {
   background: var(--background-color-progressive--hover);
-  transition: var(--transition-hover);
+  transition: var(--transition-hover--slow);
 }
 button .primary:active {
   background: var(--background-color-progressive--active);
-  transition: var(--transition-hover);
+  transition: var(--transition-hover--slow);
 }
 button.secondary-1 {
   background: transparent !important;
@@ -331,13 +333,13 @@ button.secondary-2:hover {
   background: var(--color-surface-2--hover) !important;
   border: var(--border-interactive--hover) !important;
   color: var(--color-inverted) !important;
-  transition: var(--transition-hover);
+  transition: var(--transition-hover--slow);
 }
 button.secondary-2:active {
   background: var(--color-surface-2--active) !important;
   border: var(--border-interactive--active) !important;
   color: var(--color-base) !important;
-  transition: var(--transition-hover);
+  transition: var(--transition-hover--slow);
 }
 button img {
   border: none;
@@ -356,7 +358,7 @@ button.mail .footer__subtitle-socials--text {
   opacity: 0;
   max-width: 0;
   white-space: nowrap;
-  transition: var(--transition-hover);
+  transition: var(--transition-hover--slow);
 }
 button.mail:hover {
   gap: var(--space-xxs);
@@ -365,10 +367,10 @@ button.mail:hover {
 button.mail:hover .footer__subtitle-socials--text {
   opacity: 1;
   max-width: 150px;
-  transition: var(--transition-hover);
+  transition: var(--transition-hover--slow);
 }
 button.mail:hover {
-  transition: var(--transition-hover);
+  transition: var(--transition-hover--slow);
 }
 button.x {
   overflow: hidden;
@@ -388,10 +390,10 @@ button.x:hover {
 button.x:hover .footer__subtitle-socials--text {
   opacity: 1;
   max-width: 150px;
-  transition: var(--transition-hover);
+  transition: var(--transition-hover--slow);
 }
 button.x:hover {
-  transition: var(--transition-hover);
+  transition: var(--transition-hover--slow);
 }
 
 * {
