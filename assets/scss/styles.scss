@@ -489,6 +489,21 @@ button {
 			--x-bg: oklch(calc(0 + var( --delta-lightness-active-state )) 0 0);
 		}
     }
+
+    &.discord {
+        --disc-bg: oklch(57.74% 0.2091 273.85);
+        background: var(--disc-bg) !important;
+
+        @include button-text-on-hover;
+
+        @include hover {
+			--disc-bg: oklch(calc(57.74% + var( --delta-lightness-hover-state )) 0.2091 273.85);
+		}
+
+		@include active {
+			--disc-bg: oklch(calc(57.74% + var( --delta-lightness-active-state )) 0.2091 273.85);
+		}
+    }
 }
 
 * {

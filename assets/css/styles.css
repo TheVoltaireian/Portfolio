@@ -431,6 +431,39 @@ button.x:active {
   --x-bg: oklch(calc(0 + var( --delta-lightness-active-state )) 0 0);
   transition: var(--transition-hover--slow);
 }
+button.discord {
+  --disc-bg: oklch(57.74% 0.2091 273.85);
+  background: var(--disc-bg) !important;
+  overflow: hidden;
+  gap: 0;
+  padding: var(--space-xxs);
+}
+button.discord .footer__subtitle-socials--text {
+  opacity: 0;
+  max-width: 0;
+  white-space: nowrap;
+  transition: var(--transition-hover--slow);
+}
+button.discord:hover {
+  gap: var(--space-xxs);
+  padding: var(--space-xxs) var(--space-xs);
+}
+button.discord:hover .footer__subtitle-socials--text {
+  opacity: 1;
+  max-width: 150px;
+  transition: var(--transition-hover--slow);
+}
+button.discord:hover {
+  transition: var(--transition-hover--slow);
+}
+button.discord:hover {
+  --disc-bg: oklch(calc(57.74% + var( --delta-lightness-hover-state )) 0.2091 273.85);
+  transition: var(--transition-hover--slow);
+}
+button.discord:active {
+  --disc-bg: oklch(calc(57.74% + var( --delta-lightness-active-state )) 0.2091 273.85);
+  transition: var(--transition-hover--slow);
+}
 
 * {
   box-sizing: border-box;
