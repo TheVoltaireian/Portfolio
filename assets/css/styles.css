@@ -539,6 +539,7 @@ footer .footer__subtitle .footer__subtitle-text {
 footer .footer__subtitle .footer__subtitle-socials {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: var(--space-xxs);
 }
 footer .footer__subtitle .footer__subtitle-socials .divider {
