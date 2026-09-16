@@ -492,7 +492,7 @@ footer {
 footer .footer__wordmark {
   font-size: var(--font-size-xx-large);
   font-weight: var(--font-weight-bold);
-  color: var(--color-emphasized);
+  color: var(--color-inverted);
   display: flex;
   min-width: 0;
   gap: var(--space-sm);
@@ -509,7 +509,7 @@ footer .footer__wordmark {
   }
 }
 footer .footer__wordmark .divider {
-  color: var(--color-emphasized);
+  color: var(--color-inverted);
   font-size: var(--font-size-small);
   line-height: 1;
   -webkit-user-select: none;
