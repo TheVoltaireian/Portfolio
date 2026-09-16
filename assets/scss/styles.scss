@@ -521,6 +521,8 @@ header {
         line-height: initial;
         font-size: var(--font-size-6x-large);
 
+		width: max-content;
+
         a {
             cursor: default;
             user-select: none;
