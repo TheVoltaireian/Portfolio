@@ -463,9 +463,6 @@ header h1 {
 }
 header h1 a {
   cursor: text;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 header p {
   margin-block: 0;
