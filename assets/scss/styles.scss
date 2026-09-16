@@ -4,14 +4,14 @@
 @mixin hover {
     &:hover {
         @content;
-        transition: var(--transition-hover);
+        transition: var(--transition-hover--slow);
     }
 }
 
 @mixin active {
     &:active {
         @content;
-        transition: var(--transition-hover);
+        transition: var(--transition-hover--slow);
     }
 }
 
@@ -44,7 +44,8 @@ $font-weight-base: 400;
 $font-size-base: 1rem;
 $space-unit: 1rem;
 $border-radius-base: 4px;
-$transition-hover: var(--transition-duration-medium) var(--transition-timing-function-ease);
+$transition-hover--slow: var(--transition-duration-large) var(--transition-timing-function-ease);
+$transition-hover--fast: var(--transition-duration-medium) var(--transition-timing-function-ease);
 $transition-menu: var(--transition-duration-medium) var(--transition-timing-function-ease-out);
 
 /* Breakpoints */
@@ -231,10 +232,12 @@ $breakpoint-xxs: 479px;
 	--transition-timing-function-ease-in: cubic-bezier( 0.3, 0, 0.8, 0.15 );
 	--transition-timing-function-ease-out: cubic-bezier( 0.05, 0.7, 0.1, 1 );
 
-    --transition-hover: #{$transition-hover};
+	--transition-hover--slow: #{$transition-hover--slow};
+    --transition-hover--fast: #{$transition-hover--fast};
 	--transition-menu: #{$transition-menu};
 	--transition-duration-base: 100ms;
 	--transition-duration-medium: 250ms;
+	--transition-duration-large: 350ms;
 }
 
 /* Default styles */
@@ -382,7 +385,7 @@ button {
 
     cursor: pointer;
 
-    transition: var(--transition-hover);
+    transition: var(--transition-hover--slow);
 
     .primary {
         background: var(--background-color-progressive);
