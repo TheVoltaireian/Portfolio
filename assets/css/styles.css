@@ -215,8 +215,8 @@ body::before {
   background-repeat: no-repeat;
   background-size: cover;
   animation: background 12s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-	animation-iteration-count: infinite;
-	transition: var(--transition-hover--fast);
+  animation-iteration-count: infinite;
+  transition: var(--transition-hover--fast);
   filter: blur(5px);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
           mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
