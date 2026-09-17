@@ -13,6 +13,23 @@
     }
 }
 
+@mixin button-variant($bg, $hover, $active, $text) {
+	background: $bg;
+	color: $text;
+	border: var(--border-interactive);
+
+	@include hover {
+    	background: $hover;
+    	color: var(--color-inverted);
+    	border: var(--border-interactive--hover);
+  	}
+
+  	@include active {
+    	background: $active;
+    	border: var(--border-interactive--active);
+  	}
+}
+
 @mixin focus-ring {
     &:focus-visible {
         outline: 2px solid var(--color-progressive);
@@ -51,6 +68,12 @@
 		--transition-duration-base: 0ms;
 		--transition-duration-medium: 0ms;
 		--transition-duration-large: 0ms;
+	}
+	*, *::before, *::after {
+	    animation-duration: 0.01ms !important;
+	    animation-iteration-count: 1 !important;
+	    transition-duration: 0.01ms !important;
+	    scroll-behavior: auto !important;
 	}
 }
 
@@ -494,55 +517,60 @@ button {
     }
 
     &.x, &.discord, &.github {
-        color: var(--color-emphasized) !important;
         border: var(--border-interactive) !important;
         @include button-text-on-hover;
     }
 
-    &.x {
-        --x-bg: oklch(0% 0 0);
-        background: var(--x-bg) !important;
+	&.x {
+		@include button-variant (
+			oklch(0% 0 0),
+      		oklch(calc(0% + var(--delta-lightness-hover-state)) 0 0),
+      		oklch(0% 0 0),
+      		var(--color-emphasized)
+		)
 
-        @include hover {
-            --x-bg: oklch(var(--delta-lightness-hover-state) 0 0);
+		@include hover {
             border: var(--border-interactive--hover) !important;
             color: var(--color-inverted) !important;
         }
 
         @include active {
-            --x-bg: oklch(0% 0 0);
             border: var(--border-interactive--active) !important;
         }
-    }
+	}
 
-    &.discord {
-        --disc-bg: oklch(57.74% 0.2091 273.85);
-        background: var(--disc-bg) !important;
+	&.discord {
+	    @include button-variant(
+		  	oklch(57.74% 0.2091 273.85),
+		  	oklch(calc(57.74% + var(--delta-lightness-hover-state)) 0.2091 273.85),
+		  	oklch(calc(57.74% + var(--delta-lightness-active-state)) 0.2091 273.85),
+		  	var(--color-emphasized)
+	    )
 
-        @include hover {
-            --disc-bg: oklch(calc(57.74% + var(--delta-lightness-hover-state)) 0.2091 273.85);
+		@include hover {
             border: var(--border-interactive--hover) !important;
             color: var(--color-inverted) !important;
         }
 
         @include active {
-            --disc-bg: oklch(calc(57.74% + var(--delta-lightness-active-state)) 0.2091 273.85);
             border: var(--border-interactive--active) !important;
         }
-    }
+	}
 
     &.github {
-        --git-bg: oklch(70.1% 0.2127 145.72);
-        background: var(--git-bg) !important;
+		@include button-variant(
+		  	oklch(70.1% 0.2127 145.72),
+		  	oklch(calc(70.1% + var(--delta-lightness-hover-state)) 0.2127 145.72),
+		  	oklch(calc(70.1% + var(--delta-lightness-active-state)) 0.2127 145.72),
+		  	var(--color-emphasized)
+	    )
 
         @include hover {
-            --git-bg: oklch(calc(70.1% + var(--delta-lightness-hover-state)) 0.2127 145.72);
             border: var(--border-interactive--hover) !important;
             color: var(--color-inverted) !important;
         }
 
         @include active {
-            --git-bg: oklch(calc(70.1% + var(--delta-lightness-active-state)) 0.2127 145.72);
             border: var(--border-interactive--active) !important;
         }
     }
