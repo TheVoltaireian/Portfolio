@@ -13,6 +13,14 @@
     }
 }
 
+@mixin button-base {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-xxs);
+	border-radius: var(--border-radius-base);
+	transition: background var(--transition-hover--slow), color var(--transition-hover--slow), border-color var(--transition-hover--slow);
+}
+
 @mixin button-variant($bg, $hover, $active, $text) {
 	background: $bg;
 	color: $text;
@@ -321,6 +329,7 @@ body {
 
     overflow-x: hidden;
     position: relative;
+	isolation: isolate;
 
     &::before {
         content: "";
@@ -457,6 +466,8 @@ button {
     cursor: pointer;
 
     transition: var(--transition-hover--slow);
+
+	@include button-base;
 
 	@include focus-ring;
 
