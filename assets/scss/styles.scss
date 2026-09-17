@@ -400,6 +400,13 @@ img {
 
 a {
     color: var(--color-link);
+
+	&:focus-visible {
+        outline: 2px solid var(--color-progressive);
+        outline-offset: 2px;
+        border-radius: var(--border-radius-base);
+        text-decoration: underline;
+    }
 }
 
 button {
@@ -419,6 +426,12 @@ button {
     cursor: pointer;
 
     transition: var(--transition-hover--slow);
+
+	&:focus-visible {
+        outline: 2px solid var(--color-progressive);
+        outline-offset: 2px;
+        border-radius: var(--border-radius-base);
+    }
 
     &.primary {
         background: var(--background-color-progressive);
