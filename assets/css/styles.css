@@ -203,7 +203,7 @@
   --transition-menu: var(--transition-duration-medium) var(--transition-timing-function-ease-out);
   /* Random variables */
   --header-height: 40vh;
-  --social-label-width: 10ch;
+  --social-label-width: 16ch;
   /* Color scheme */
   color-scheme: dark;
 }
@@ -450,7 +450,7 @@ button.social:hover {
 }
 button.social:hover .footer__subtitle-socials--text {
   opacity: 1;
-  max-width: var(--social-label-width, 10ch);
+  max-width: var(--social-label-width, 20ch);
 }
 button.x {
   background: oklch(0% 0 0deg);
