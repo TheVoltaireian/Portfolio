@@ -528,15 +528,6 @@ button {
       		oklch(0% 0 0),
       		var(--color-emphasized)
 		)
-
-		@include hover {
-            border: var(--border-interactive--hover) !important;
-            color: var(--color-inverted) !important;
-        }
-
-        @include active {
-            border: var(--border-interactive--active) !important;
-        }
 	}
 
 	&.discord {
@@ -546,15 +537,6 @@ button {
 		  	oklch(calc(57.74% + var(--delta-lightness-active-state)) 0.2091 273.85),
 		  	var(--color-emphasized)
 	    )
-
-		@include hover {
-            border: var(--border-interactive--hover) !important;
-            color: var(--color-inverted) !important;
-        }
-
-        @include active {
-            border: var(--border-interactive--active) !important;
-        }
 	}
 
     &.github {
@@ -564,15 +546,6 @@ button {
 		  	oklch(calc(70.1% + var(--delta-lightness-active-state)) 0.2127 145.72),
 		  	var(--color-emphasized)
 	    )
-
-        @include hover {
-            border: var(--border-interactive--hover) !important;
-            color: var(--color-inverted) !important;
-        }
-
-        @include active {
-            border: var(--border-interactive--active) !important;
-        }
     }
 }
 
