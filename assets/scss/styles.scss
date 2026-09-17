@@ -75,7 +75,7 @@
 
         .footer__subtitle-socials--text {
             opacity: 1;
-            max-width: 150px;
+            max-width: var(--social-label-width, 10ch);;
         }
     }
 }
@@ -313,6 +313,9 @@ $breakpoint-xxs: 479px;
 	--transition-hover--slow: #{$transition-hover--slow};
     --transition-hover--fast: #{$transition-hover--fast};
 	--transition-menu: #{$transition-menu};
+
+	/* Random vars */
+	--social-label-width: 10ch;
 
 	/* Color scheme */
 	color-scheme: dark;
