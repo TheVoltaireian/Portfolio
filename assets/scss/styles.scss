@@ -14,11 +14,22 @@
 }
 
 @mixin button-base {
-	display: inline-flex;
-	align-items: center;
-	gap: var(--space-xxs);
-	border-radius: var(--border-radius-base);
-	transition: background var(--transition-hover--slow), color var(--transition-hover--slow), border-color var(--transition-hover--slow);
+	border-radius: var(--border-radius-base) !important;
+
+    display: flex;
+    min-width: 0;
+    gap: var(--space-xxs);
+    align-items: center;
+
+    padding: var(--space-xxs) var(--space-xs);
+
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semi-bold);
+    font-size: var(--font-size-medium);
+
+    cursor: pointer;
+
+    transition: var(--transition-hover--slow);
 }
 
 @mixin button-variant($bg, $hover, $active, $text) {
@@ -450,25 +461,7 @@ a {
 }
 
 button {
-    border-radius: var(--border-radius-base) !important;
-
-    display: flex;
-    min-width: 0;
-    gap: var(--space-xxs);
-    align-items: center;
-
-    padding: var(--space-xxs) var(--space-xs);
-
-    font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-semi-bold);
-    font-size: var(--font-size-medium);
-
-    cursor: pointer;
-
-    transition: var(--transition-hover--slow);
-
 	@include button-base;
-
 	@include focus-ring;
 
     &.primary {
