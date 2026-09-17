@@ -4,14 +4,12 @@
 @mixin hover {
     &:hover {
         @content;
-        transition: var(--transition-hover--slow);
     }
 }
 
 @mixin active {
     &:active {
         @content;
-        transition: var(--transition-hover--slow);
     }
 }
 
@@ -91,13 +89,13 @@ $breakpoint-xxs: 479px;
 
     /* Font weights */
     --font-weight-base: #{$font-weight-base};
-    --font-weight-light: calc(var( --font-weight-base ) - 100);
-    --font-weight-regular: var( --font-weight-base );
-    --font-weight-medium: calc(var( --font-weight-base ) + 100);
-    --font-weight-semi-bold: calc(var( --font-weight-base ) + 200);
-    --font-weight-bold: calc(var( --font-weight-base ) + 300);
-    --font-weight-extra-bold: calc(var( --font-weight-base ) + 400);
-    --font-weight-black: calc(var( --font-weight-base ) + 500);
+    --font-weight-light: calc(var(--font-weight-base) - 100);
+    --font-weight-regular: var(--font-weight-base);
+    --font-weight-medium: calc(var(--font-weight-base) + 100);
+    --font-weight-semi-bold: calc(var(--font-weight-base) + 200);
+    --font-weight-bold: calc(var(--font-weight-base) + 300);
+    --font-weight-extra-bold: calc(var(--font-weight-base) + 400);
+    --font-weight-black: calc(var(--font-weight-base) + 500);
 
     /* Font sizes */
     --font-size-base: #{$font-size-base};
@@ -266,8 +264,7 @@ $breakpoint-xxs: 479px;
 }
 
 /* Default styles */
-
-:root {
+html {
     direction: ltr;
 
     font-weight: var(--font-weight-regular);
