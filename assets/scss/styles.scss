@@ -308,6 +308,11 @@ body {
         z-index: -1;
 
         will-change: background-image;
+
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+			background-image: url('../images/backgrounds/summer_day4/4.png');
+		}
     }
 
     display: grid;
