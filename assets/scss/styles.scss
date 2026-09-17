@@ -45,29 +45,23 @@
     }
 }
 
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--transition-duration-base: 0ms;
+		--transition-duration-medium: 0ms;
+		--transition-duration-large: 0ms;
+	}
+}
+
 /* Background animation */
-@keyframes background {
-	0% {
-		background-image: url('../images/backgrounds/summer_day4/1.png');
-	}
-	16.6% {
-		background-image: url('../images/backgrounds/summer_day4/2.png');
-	}
-	33.3% {
-		background-image: url('../images/backgrounds/summer_day4/3.png');
-	}
-	50% {
-		background-image: url('../images/backgrounds/summer_day4/4.png');
-	}
-	66.6% {
-		background-image: url('../images/backgrounds/summer_day4/5.png');
-	}
-	83.3% {
-		background-image: url('../images/backgrounds/summer_day4/6.png');
-	}
-	100% {
-		background-image: url('../images/backgrounds/summer_day4/1.png');
-	}
+@keyframes heroBackground {
+	0%, 16.6% { background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("../images/backgrounds/summer_day4/1.png"); }
+  	16.7%, 33.2% { background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("../images/backgrounds/summer_day4/2.png"); }
+	33.3%, 49.9% { background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("../images/backgrounds/summer_day4/3.png"); }
+	50%, 66.5% { background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("../images/backgrounds/summer_day4/4.png"); }
+	66.6%, 83.2% { background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("../images/backgrounds/summer_day4/5.png"); }
+	83.3%, 100% { background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("../images/backgrounds/summer_day4/6.png"); }
 }
 
 /* SCSS variables */
@@ -263,12 +257,16 @@ $breakpoint-xxs: 479px;
 	--transition-timing-function-ease-in: cubic-bezier( 0.3, 0, 0.8, 0.15 );
 	--transition-timing-function-ease-out: cubic-bezier( 0.05, 0.7, 0.1, 1 );
 
-	--transition-hover--slow: #{$transition-hover--slow};
-    --transition-hover--fast: #{$transition-hover--fast};
-	--transition-menu: #{$transition-menu};
 	--transition-duration-base: 100ms;
 	--transition-duration-medium: 250ms;
 	--transition-duration-large: 350ms;
+
+	--transition-hover--slow: #{$transition-hover--slow};
+    --transition-hover--fast: #{$transition-hover--fast};
+	--transition-menu: #{$transition-menu};
+
+	/* Color scheme */
+	color-scheme: dark;
 }
 
 /* Default styles */
@@ -303,11 +301,12 @@ body {
         left: 0;
         width: 100%;
         height: 40vh;
-        background-position: top;
+        background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
-		animation: background 12s cubic-bezier(0.075, 0.82, 0.165, 1) forwards infinite;
-		transition: var(--transition-hover--fast);
+		background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("../images/backgrounds/summer_day4/1.png");
+		animation: heroBackground 12s cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out infinite;
+		transition: opacity var(--transition-hover--fast);
         filter: var(--backdrop-filter-blur);
         mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
         z-index: -1;
