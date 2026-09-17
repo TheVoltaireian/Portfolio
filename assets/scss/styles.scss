@@ -465,22 +465,23 @@ button {
 	@include focus-ring;
 
     &.primary {
-        background: var(--background-color-progressive);
-        color: var(--color-inverted);
-
-        @include hover {
-            background: var(--background-color-progressive--hover)
-        }
-
-        @include active {
-            background: var(--background-color-progressive--active)
-        }
+		@include button-variant (
+			var(--background-color-progressive),
+      		var(--background-color-progressive--hover),
+      		var(--background-color-progressive--active),
+      		var(--color-inverted)
+		)
     }
 
     &.secondary-1 {
-        background: transparent !important;
-        color: var(--color-progressive) !important;
         border: var(--border-progressive) !important;
+
+		@include button-variant (
+			transparent,
+      		transparent,
+      		transparent,
+      		var(--color-progressive)
+		)
 
         @include hover {
             color: var(--color-progressive--hover) !important;
@@ -494,20 +495,20 @@ button {
     }
 
     &.secondary-2 {
-        background: var(--color-surface-2) !important;
-        color: var(--color-emphasized) !important;
-        border: var(--border-interactive) !important;
+		@include button-variant (
+			var(--color-surface-2),
+      		var(--color-surface-2--hover),
+      		var(--color-surface-2--active),
+      		var(--color-emphasized)
+		)
 
         @include hover {
-            background: var(--color-surface-2--hover) !important;
             border: var(--border-interactive--hover) !important;
             color: var(--color-inverted) !important;
         }
 
         @include active {
-            background: var(--color-surface-2--active) !important;
             border: var(--border-interactive--active) !important;
-            color: var(--color-base) !important;
         }
     }
 
@@ -521,14 +522,9 @@ button {
         transform: translateY(-1000px);
     }
 
-    &.mail {
-        @include button-text-on-hover;
-    }
-
-    &.x, &.discord, &.github {
-        border: var(--border-interactive) !important;
-        @include button-text-on-hover;
-    }
+	&.social {
+		@include button-text-on-hover;
+	}
 
 	&.x {
 		@include button-variant (
