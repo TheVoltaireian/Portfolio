@@ -508,6 +508,7 @@ header h1 {
   margin-block: 0;
   line-height: initial;
   font-size: var(--font-size-6x-large);
+  font-weight: var(--font-weight-black);
 }
 header h1 a {
   cursor: text;
