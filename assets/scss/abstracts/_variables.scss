@@ -58,6 +58,7 @@ $breakpoint-xxs: 479px;
 
     /* Spacings */
     --space-unit: #{$space-unit};
+	--space-xxxs: calc( 0.125 * var( --space-unit ) );
 	--space-xxs: calc( 0.25 * var( --space-unit ) );
 	--space-xs: calc( 0.5 * var( --space-unit ) );
 	--space-sm: calc( 0.75 * var( --space-unit ) );
@@ -65,6 +66,7 @@ $breakpoint-xxs: 479px;
 	--space-lg: calc( 1.25 * var( --space-unit ) );
 	--space-xl: calc( 1.5 * var( --space-unit ) );
 	--space-xxl: calc( 2 * var( --space-unit ) );
+	--space-xxxl: calc( 3 * var( --space-unit ) );
 
     /* Border / Border radius */
     --border-width-base: 1px;
