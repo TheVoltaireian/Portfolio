@@ -9,7 +9,7 @@ A work-in-progress portfolio/blog website that I'm working on
 - <b>Editor</b> — Visual Studio Code
 - <b>Languages</b> — HTML, Sass, JavaScript
 - <b>Source Control</b> — Git
-- <b>Terminal</b> — Bash
+- <b>CLI</b> — Bash
 - <b>Documentation</b> — Markdown
 - <b>Hosting</b> — GitHub Pages
 - <b>Extensions</b> — Watch Sass, Live Server, Source Control
