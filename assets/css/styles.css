@@ -449,6 +449,39 @@ button.github:active {
   border: var(--border-interactive--active);
 }
 
+/* Background animation */
+@keyframes heroBackground {
+  0%, 16.6% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
+  }
+  16.7%, 33.2% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/2.png");
+  }
+  33.3%, 49.9% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/3.png");
+  }
+  50%, 66.5% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/4.png");
+  }
+  66.6%, 83.2% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/5.png");
+  }
+  83.3%, 100% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/6.png");
+  }
+}
+@keyframes heroFadeIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+    filter: blur(20px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: none;
+  }
+}
 body::before {
   content: "";
   position: absolute;
@@ -597,38 +630,4 @@ footer .footer__subtitle .footer__subtitle-socials .divider {
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
-}
-
-/* Background animation */
-@keyframes heroBackground {
-  0%, 16.6% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
-  }
-  16.7%, 33.2% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/2.png");
-  }
-  33.3%, 49.9% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/3.png");
-  }
-  50%, 66.5% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/4.png");
-  }
-  66.6%, 83.2% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/5.png");
-  }
-  83.3%, 100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/6.png");
-  }
-}
-@keyframes heroFadeIn {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-    filter: blur(20px);
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-    filter: none;
-  }
 }/*# sourceMappingURL=styles.css.map */
