@@ -392,7 +392,7 @@ button.social {
   gap: 0;
   padding: var(--space-xxs);
 }
-button.social .footer__subtitle-socials--text {
+button.social span {
   max-width: 0;
   opacity: 0;
   white-space: nowrap;
@@ -402,7 +402,7 @@ button.social:hover {
   gap: var(--space-xxs);
   padding: var(--space-xxs) var(--space-xs);
 }
-button.social:hover .footer__subtitle-socials--text {
+button.social:hover span {
   opacity: 1;
   max-width: var(--social-label-width, 20ch);
 }
@@ -449,54 +449,6 @@ button.github:active {
   border: var(--border-interactive--active);
 }
 
-/* Smooth crossfade between the hero background frames. The image itself is not interpolable, so two layers alternate while fading. */
-@keyframes heroBackgroundA {
-  0%, 16.66% {
-    opacity: 1;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
-  }
-  25%, 33.33% {
-    opacity: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/3.png");
-  }
-  41.66%, 50% {
-    opacity: 1;
-  }
-  58.33%, 66.66% {
-    opacity: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/5.png");
-  }
-  75%, 83.33% {
-    opacity: 1;
-  }
-  91.66%, 100% {
-    opacity: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
-  }
-}
-@keyframes heroBackgroundB {
-  0%, 8.33% {
-    opacity: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/2.png");
-  }
-  16.66%, 33.33% {
-    opacity: 1;
-  }
-  41.66%, 50% {
-    opacity: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/4.png");
-  }
-  58.33%, 66.66% {
-    opacity: 1;
-  }
-  75%, 83.33% {
-    opacity: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/6.png");
-  }
-  91.66%, 100% {
-    opacity: 1;
-  }
-}
 @keyframes heroFadeIn {
   from {
     transform: translateY(-100%);
