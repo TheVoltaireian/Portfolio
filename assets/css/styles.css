@@ -451,23 +451,26 @@ button.github:active {
 
 /* Background animation */
 @keyframes heroBackground {
-  0%, 16.6% {
+  0% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
   }
-  16.7%, 33.2% {
+  16.7% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/2.png");
   }
-  33.3%, 49.9% {
+  33.3% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/3.png");
   }
-  50%, 66.5% {
+  50% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/4.png");
   }
-  66.6%, 83.2% {
+  66.6% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/5.png");
   }
-  83.3%, 100% {
+  83.3% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/6.png");
+  }
+  100% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
   }
 }
 @keyframes heroFadeIn {
@@ -493,8 +496,8 @@ body::before {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
-  animation: heroBackground 12s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
-  transition: opacity var(--transition-hover--fast);
+  animation: heroBackground 12s ease-in-out infinite;
+  transition: var(--transition-hover--fast);
   filter: var(--backdrop-filter-blur);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
           mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
