@@ -520,6 +520,11 @@ header hr {
   width: 3rem;
 }
 
+main {
+  margin: var(--space-lg);
+  padding: var(--space-xl) var(--space-md);
+}
+
 footer {
   background: var(--color-surface-1);
   border-top: var(--border-base);
@@ -600,4 +605,15 @@ footer .footer__subtitle .footer__subtitle-socials .divider {
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+/* index.html */
+.projects .projects__wikis .projects__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-bottom: var(--border-base);
+}
+.projects .projects__wikis .projects__header h2 {
+  margin-block-end: 0.1rem;
 }/*# sourceMappingURL=styles.css.map */

@@ -2,3 +2,19 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+
+/* index.html */
+.projects {
+    .projects__wikis {
+        .projects__header {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-bottom: var(--border-base);
+
+            h2 {
+                margin-block-end: 0.1rem;
+            }
+        }
+    }
+}
