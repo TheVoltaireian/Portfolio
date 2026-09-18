@@ -5,11 +5,13 @@ A work-in-progress portfolio/blog website that I'm working on
 - <b>Blog:</b> A page where I'll occasionally write about things that have happened in my life
 
 ## Technical Details 🖥️
-- Visual Studio Code
-- HTML, Sass (autocompiled to CSS using the Watch Sass VSCode extension) & JavaScript
-- Bash
-- Git
-- GitHub Pages
+- Editor: Visual Studio Code
+- Languages: HTML, Sass, JavaScript
+- Source Control: Git
+- Terminal: Bash
+- Documentation: Markdown
+- Hosting: GitHub Pages
+- Extensions: Watch Sass, Live Server, Source Control
 
 ## Roadmap 🌴
 - Split variables.scss into multiple files
