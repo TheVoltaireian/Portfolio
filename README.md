@@ -1,19 +1,20 @@
 # Website
 A work-in-progress portfolio/blog website that I'm working on
 
-- <b>Portfolio:</b> List of wikis and projects I've worked on in the past few years
-- <b>Blog:</b> A page where I'll occasionally write about things that have happened in my life
+## ✨ Highlights
+- <b>Portfolio</b> — List of wikis and projects I've worked on in the past few years
+- <b>Blog</b> — A page where I'll occasionally write about things that have happened in my life
 
-## Technical Details 🖥️
-- Editor: Visual Studio Code
-- Languages: HTML, Sass, JavaScript
-- Source Control: Git
-- Terminal: Bash
-- Documentation: Markdown
-- Hosting: GitHub Pages
-- Extensions: Watch Sass, Live Server, Source Control
+## 🖥️ Technical Details
+- <b>Editor</b> — Visual Studio Code
+- <b>Languages</b> — HTML, Sass, JavaScript
+- <b>Source Control</b> — Git
+- <b>Terminal</b> — Bash
+- <b>Documentation</b> — Markdown
+- <b>Hosting</b> — GitHub Pages
+- <b>Extensions</b> — Watch Sass, Live Server, Source Control
 
-## Roadmap 🌴
+## 🌴 Roadmap
 - Split variables.scss into multiple files
   - breakpoints.scss (for media queries), tokens.scss (scss variables), variables.scss (:root variables)  
 - Add more links to footer
