@@ -60,7 +60,7 @@
     gap: 0;
     padding: var(--space-xxs);
 
-    .footer__subtitle-socials--text {
+    span {
         max-width: 0;
         opacity: 0;
         white-space: nowrap;
@@ -71,7 +71,7 @@
         gap: var(--space-xxs);
         padding: var(--space-xxs) var(--space-xs);
 
-        .footer__subtitle-socials--text {
+        span {
             opacity: 1;
             max-width: var(--social-label-width, 20ch);
         }
