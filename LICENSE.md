@@ -1,4 +1,4 @@
-All Rights Reserved
+# All Rights Reserved
 
 Copyright © 2026 WildVoltaireian
 
