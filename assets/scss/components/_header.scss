@@ -1,13 +1,15 @@
 @use "../utilities/animations" as *;
 
 body {
-    &::before,
-    &::after {
+    &::before {
         content: "";
         position: absolute;
         inset: 0 0 auto;
         width: 100%;
         height: 40vh;
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+            url("../images/backgrounds/summer_day4.gif");
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -15,21 +17,6 @@ body {
         mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
         z-index: -1;
         pointer-events: none;
-        will-change: opacity;
-    }
-
-    &::before {
-        background-image:
-            linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-            url("../images/backgrounds/summer_day4/1.png");
-        animation: heroBackgroundA 12s ease-in-out infinite;
-    }
-
-    &::after {
-        background-image:
-            linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-            url("../images/backgrounds/summer_day4/2.png");
-        animation: heroBackgroundB 12s ease-in-out infinite;
     }
 }
 
