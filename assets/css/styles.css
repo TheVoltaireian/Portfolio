@@ -1,48 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
-/* Mixins */
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    --transition-duration-base: 0ms;
-    --transition-duration-medium: 0ms;
-    --transition-duration-large: 0ms;
-  }
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  body::before {
-    animation: none;
-  }
-}
-/* Background animation */
-@keyframes heroBackground {
-  0%, 16.6% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
-  }
-  16.7%, 33.2% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/2.png");
-  }
-  33.3%, 49.9% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/3.png");
-  }
-  50%, 66.5% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/4.png");
-  }
-  66.6%, 83.2% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/5.png");
-  }
-  83.3%, 100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/6.png");
-  }
-}
 /* SCSS variables */
 /* Breakpoints */
 /* Styles cascade from desktop in both directions — smaller breakpoints cascade down (tablet > mobile landscape > mobile portrait) and larger breakpoints cascade up (1280px > 1440px > 1920px) */
@@ -208,7 +164,13 @@
   color-scheme: dark;
 }
 
-/* Default styles */
+/* Mixins */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 html {
   direction: ltr;
   font-weight: var(--font-weight-regular);
@@ -228,34 +190,14 @@ body {
   position: relative;
   isolation: isolate;
 }
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40vh;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
-  animation: heroBackground 12s cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out infinite;
-  transition: opacity var(--transition-hover--fast);
-  filter: var(--backdrop-filter-blur);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
-          mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
-  z-index: -1;
-  will-change: background-image;
-}
-@media (prefers-reduced-motion: reduce) {
-  body::before {
-    animation: none;
-    background-image: url("../images/backgrounds/summer_day4/4.png");
-  }
-}
-body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+
+img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: var(--border-subtle);
+  border-radius: var(--border-radius-base);
 }
 
 b, strong {
@@ -328,15 +270,6 @@ p {
   overflow-wrap: break-word;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border: var(--border-subtle);
-  border-radius: var(--border-radius-base);
-}
-
 a {
   color: var(--color-link);
 }
@@ -349,6 +282,27 @@ a:focus-visible {
   text-decoration: underline;
 }
 
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-duration-base: 0ms;
+    --transition-duration-medium: 0ms;
+    --transition-duration-large: 0ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  body::before {
+    animation: none;
+  }
+}
 button {
   border-radius: var(--border-radius-base) !important;
   display: flex;
@@ -495,25 +449,32 @@ button.github:active {
   border: var(--border-interactive--active);
 }
 
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
+  animation: heroBackground 12s cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out infinite;
+  transition: opacity var(--transition-hover--fast);
+  filter: var(--backdrop-filter-blur);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+          mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+  z-index: -1;
+  will-change: background-image;
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+    background-image: url("../images/backgrounds/summer_day4/4.png");
+  }
 }
 
-/* MAIN PAGE */
-@keyframes heroFadeIn {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-    filter: blur(20px);
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-    filter: none;
-  }
-}
 header {
   display: flex;
   flex-direction: column;
@@ -631,4 +592,43 @@ footer .footer__subtitle .footer__subtitle-socials .divider {
      -moz-user-select: none;
           user-select: none;
   flex-shrink: 0;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Background animation */
+@keyframes heroBackground {
+  0%, 16.6% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
+  }
+  16.7%, 33.2% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/2.png");
+  }
+  33.3%, 49.9% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/3.png");
+  }
+  50%, 66.5% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/4.png");
+  }
+  66.6%, 83.2% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/5.png");
+  }
+  83.3%, 100% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/6.png");
+  }
+}
+@keyframes heroFadeIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+    filter: blur(20px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: none;
+  }
 }/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,79 @@
+/* Mixins */
+@mixin hover {
+    &:hover {
+        @content;
+    }
+}
+
+@mixin active {
+    &:active {
+        @content;
+    }
+}
+
+@mixin button-base {
+	border-radius: var(--border-radius-base) !important;
+
+    display: flex;
+    min-width: 0;
+    gap: var(--space-xxs);
+    align-items: center;
+
+    padding: var(--space-xxs) var(--space-xs);
+
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semi-bold);
+    font-size: var(--font-size-medium);
+
+    cursor: pointer;
+
+    transition: var(--transition-hover--slow);
+}
+
+@mixin button-variant($bg, $hover, $active, $text) {
+	background: $bg;
+	color: $text;
+	border: var(--border-interactive);
+
+	@include hover {
+        background: $hover;
+        color: var(--color-inverted);
+        border: var(--border-interactive--hover);
+    }
+    
+    @include active {
+        background: $active;
+        border: var(--border-interactive--active);
+    }
+}
+
+@mixin focus-ring {
+    &:focus-visible {
+        outline: 2px solid var(--color-progressive);
+        outline-offset: 2px;
+        border-radius: var(--border-radius-base);
+    }
+}
+
+@mixin button-text-on-hover {
+    overflow: hidden;
+    gap: 0;
+    padding: var(--space-xxs);
+
+    .footer__subtitle-socials--text {
+        max-width: 0;
+        opacity: 0;
+        white-space: nowrap;
+        transition: max-width var(--transition-hover--slow), opacity var(--transition-hover--slow);
+    }
+
+    @include hover {
+        gap: var(--space-xxs);
+        padding: var(--space-xxs) var(--space-xs);
+
+        .footer__subtitle-socials--text {
+            opacity: 1;
+            max-width: var(--social-label-width, 20ch);
+        }
+    }
+}
