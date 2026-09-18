@@ -1,24 +1,35 @@
 @use "../utilities/animations" as *;
 
 body {
-    &::before {
+    &::before,
+    &::after {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0 0 auto;
         width: 100%;
         height: 40vh;
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
-		background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("../images/backgrounds/summer_day4/1.png");
-		animation: heroBackground 12s ease-in-out infinite;
-		transition: var(--transition-hover--fast);
         filter: var(--backdrop-filter-blur);
         mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
         z-index: -1;
+        pointer-events: none;
+        will-change: opacity;
+    }
 
-        will-change: background-image;
+    &::before {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+            url("../images/backgrounds/summer_day4/1.png");
+        animation: heroBackgroundA 12s ease-in-out infinite;
+    }
+
+    &::after {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+            url("../images/backgrounds/summer_day4/2.png");
+        animation: heroBackgroundB 12s ease-in-out infinite;
     }
 }
 

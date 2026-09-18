@@ -449,28 +449,52 @@ button.github:active {
   border: var(--border-interactive--active);
 }
 
-/* Background animation */
-@keyframes heroBackground {
-  0% {
+/* Smooth crossfade between the hero background frames. The image itself is not interpolable, so two layers alternate while fading. */
+@keyframes heroBackgroundA {
+  0%, 16.66% {
+    opacity: 1;
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
   }
-  16.7% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/2.png");
-  }
-  33.3% {
+  25%, 33.33% {
+    opacity: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/3.png");
   }
-  50% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/4.png");
+  41.66%, 50% {
+    opacity: 1;
   }
-  66.6% {
+  58.33%, 66.66% {
+    opacity: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/5.png");
   }
-  83.3% {
+  75%, 83.33% {
+    opacity: 1;
+  }
+  91.66%, 100% {
+    opacity: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
+  }
+}
+@keyframes heroBackgroundB {
+  0%, 8.33% {
+    opacity: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/2.png");
+  }
+  16.66%, 33.33% {
+    opacity: 1;
+  }
+  41.66%, 50% {
+    opacity: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/4.png");
+  }
+  58.33%, 66.66% {
+    opacity: 1;
+  }
+  75%, 83.33% {
+    opacity: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/6.png");
   }
-  100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
+  91.66%, 100% {
+    opacity: 1;
   }
 }
 @keyframes heroFadeIn {
@@ -485,24 +509,29 @@ button.github:active {
     filter: none;
   }
 }
-body::before {
+body::before, body::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0 0 auto;
   width: 100%;
   height: 40vh;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
-  animation: heroBackground 12s ease-in-out infinite;
-  transition: var(--transition-hover--fast);
   filter: var(--backdrop-filter-blur);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
           mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
   z-index: -1;
-  will-change: background-image;
+  pointer-events: none;
+  will-change: opacity;
+}
+body::before {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/1.png");
+  animation: heroBackgroundA 12s ease-in-out infinite;
+}
+body::after {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../images/backgrounds/summer_day4/2.png");
+  animation: heroBackgroundB 12s ease-in-out infinite;
 }
 
 header {
