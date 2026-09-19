@@ -19,10 +19,6 @@
         transition: all 750ms;
     }
 
-    .projects__card--hidden {
-        transition: opacity 200ms, filter 750ms, transform 750ms !important;
-    }
-
     &--visible {
         opacity: 1;
         filter: blur(0);
