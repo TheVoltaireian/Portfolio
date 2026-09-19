@@ -12,7 +12,7 @@ footer {
     padding: calc(var(--space-lg) + var(--space-md));
 
     @media screen and (max-width: $breakpoint-xs) {
-        padding: var(--space-lg) var(--space-md);
+        padding: var(--space-xxl) var(--space-lg);
     }
 
     .footer__wordmark {
