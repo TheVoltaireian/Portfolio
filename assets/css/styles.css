@@ -520,6 +520,9 @@ header h1 {
 header h1 a {
   cursor: text;
 }
+header h1 a:hover {
+  font-weight: initial !important;
+}
 header p {
   margin-block: 0;
   line-height: var(--line-height-small);
@@ -546,7 +549,7 @@ footer {
   width: 100%;
   height: -moz-max-content;
   height: max-content;
-  padding: var(--space-xl);
+  padding: calc(var(--space-lg) + var(--space-md));
 }
 footer .footer__wordmark {
   font-size: var(--font-size-xx-large);
@@ -716,7 +719,7 @@ body {
   height: auto;
 }
 .projects .projects__wikis .projects__cards .projects__card .projects__cardHead {
-  padding-block: var(--space-sm);
+  padding-block: var(--space-md) var(--space-sm);
   margin-bottom: var(--space-sm);
   border-bottom: var(--border-subtle);
 }
