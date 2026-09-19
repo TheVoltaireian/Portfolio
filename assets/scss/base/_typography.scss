@@ -73,10 +73,24 @@ p {
 
 a {
     color: var(--color-link);
+    text-decoration: underline transparent;
+    text-underline-offset: var(--space-xxs);
+
+    transition: var(--transition-hover--fast);
 	
 	@include focus-ring;
 
 	&:focus-visible {
+        text-decoration: underline 1px transparent;
+    }
+
+    @include hover {
+        color: var(--color-link--hover);
         text-decoration: underline;
+        font-weight: var(--font-weight-semi-bold);
+    }
+
+    @include active {
+        color: var(--color-link--active);
     }
 }
