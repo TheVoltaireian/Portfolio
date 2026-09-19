@@ -46,6 +46,11 @@ html[page="index.html"] {
             text-wrap: wrap;
         }
 
+        @media screen and (max-width: $breakpoint-xs) {
+            margin: var(--space-sm);
+            padding: var(--space-md) var(--space-xs);
+        }
+
         h1 {
             margin: auto;
             margin-block: 0;

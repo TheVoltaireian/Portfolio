@@ -524,6 +524,12 @@ html[page="index.html"] header {
     text-wrap: wrap;
   }
 }
+@media screen and (max-width: 767px) {
+  html[page="index.html"] header {
+    margin: var(--space-sm);
+    padding: var(--space-md) var(--space-xs);
+  }
+}
 html[page="index.html"] header h1 {
   margin: auto;
   margin-block: 0;
@@ -576,6 +582,11 @@ footer {
   height: -moz-max-content;
   height: max-content;
   padding: calc(var(--space-lg) + var(--space-md));
+}
+@media screen and (max-width: 767px) {
+  footer {
+    padding: var(--space-lg) var(--space-md);
+  }
 }
 footer .footer__wordmark {
   font-size: var(--font-size-xx-large);

@@ -1,4 +1,9 @@
 main {
     margin: var(--space-lg);
     padding: var(--space-xl) var(--space-md);
+
+    @media screen and (max-width: $breakpoint-xs) {
+        margin: var(--space-sm);
+        padding: var(--space-md) var(--space-xs);
+    }
 }
