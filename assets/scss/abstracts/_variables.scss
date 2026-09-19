@@ -1,21 +1,5 @@
-/* SCSS variables */
-$font-weight-base: 400;
-$font-size-base: 1rem;
-$space-unit: 1rem;
-$border-radius-base: 4px;
-
-$transition-hover--slow: var(--transition-duration-large) var(--transition-timing-function-ease);
-$transition-hover--fast: var(--transition-duration-medium) var(--transition-timing-function-ease);
-$transition-menu: var(--transition-duration-medium) var(--transition-timing-function-ease-out);
-
-/* Breakpoints */
-/* Styles cascade from desktop in both directions — smaller breakpoints cascade down (tablet > mobile landscape > mobile portrait) and larger breakpoints cascade up (1280px > 1440px > 1920px) */
-$breakpoint-xl: 1920px;
-$breakpoint-lg: 1440px;
-$breakpoint-md: 1280px;
-$breakpoint-sm: 992px;
-$breakpoint-xs: 767px;
-$breakpoint-xxs: 479px;
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/tokens" as *;
 
 :root {
     /* My theme site is largely based on the MediaWiki skin "Citizen", hence why a lot of the variables are from that skin. */

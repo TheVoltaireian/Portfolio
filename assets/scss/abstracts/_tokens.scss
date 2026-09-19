@@ -1,0 +1,9 @@
+/* SCSS tokens */
+$font-weight-base: 400;
+$font-size-base: 1rem;
+$space-unit: 1rem;
+$border-radius-base: 4px;
+
+$transition-hover--slow: var(--transition-duration-large) var(--transition-timing-function-ease);
+$transition-hover--fast: var(--transition-duration-medium) var(--transition-timing-function-ease);
+$transition-menu: var(--transition-duration-medium) var(--transition-timing-function-ease-out);

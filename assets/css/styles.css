@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* SCSS variables */
+/* SCSS tokens */
 /* Breakpoints */
 /* Styles cascade from desktop in both directions — smaller breakpoints cascade down (tablet > mobile landscape > mobile portrait) and larger breakpoints cascade up (1280px > 1440px > 1920px) */
 :root {
@@ -476,7 +476,7 @@ button.github:active {
     filter: none;
   }
 }
-body::before {
+html[page="index.html"] body::before {
   content: "";
   position: absolute;
   inset: 0 0 auto;
@@ -492,8 +492,7 @@ body::before {
   z-index: -1;
   pointer-events: none;
 }
-
-header {
+html[page="index.html"] header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -506,34 +505,34 @@ header {
   animation: heroFadeIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 @media (prefers-reduced-motion: reduce) {
-  header {
+  html[page="index.html"] header {
     animation: none;
   }
 }
-header h1 {
+html[page="index.html"] header h1 {
   margin: auto;
   margin-block: 0;
   line-height: initial;
   font-size: var(--font-size-6x-large);
   font-weight: var(--font-weight-bold);
 }
-header h1 a {
+html[page="index.html"] header h1 a {
   cursor: text;
 }
-header h1 a:hover {
+html[page="index.html"] header h1 a:hover {
   font-weight: initial !important;
 }
-header p {
+html[page="index.html"] header p {
   margin-block: 0;
   line-height: var(--line-height-small);
   font-weight: var(--font-weight-medium);
 }
-header p.sub {
+html[page="index.html"] header p.sub {
   color: var(--color-placeholder);
   font-size: var(--font-size-small);
   line-height: var(--line-height-medium);
 }
-header hr {
+html[page="index.html"] header hr {
   margin-block: var(--space-sm);
   width: 3rem;
 }
@@ -644,12 +643,12 @@ body {
 }
 
 /* index.html */
-.projects .projects__wikis {
+html[page="index.html"] .projects .projects__wikis {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
-.projects .projects__wikis .projects__header {
+html[page="index.html"] .projects .projects__wikis .projects__header {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -657,47 +656,48 @@ body {
   padding-block: var(--space-sm);
   line-height: 1;
 }
-.projects .projects__wikis .projects__header h2 {
+html[page="index.html"] .projects .projects__wikis .projects__header h2 {
   margin-block: 0;
 }
-.projects .projects__wikis .projects__header p {
+html[page="index.html"] .projects .projects__wikis .projects__header p {
   margin-block: 0;
 }
-.projects .projects__wikis .projects__header--hidden {
+html[page="index.html"] .projects .projects__wikis .projects__header--hidden {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
   transition: all 750ms;
 }
-.projects .projects__wikis .projects__header--visible {
+html[page="index.html"] .projects .projects__wikis .projects__header--visible {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
 }
-.projects .projects__wikis .projects__cards {
+html[page="index.html"] .projects .projects__wikis .projects__cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-sm);
 }
 @media screen and (max-width: 1280px) {
-  .projects .projects__wikis .projects__cards {
+  html[page="index.html"] .projects .projects__wikis .projects__cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media screen and (max-width: 992px) {
-  .projects .projects__wikis .projects__cards {
+  html[page="index.html"] .projects .projects__wikis .projects__cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media screen and (max-width: 767px) {
-  .projects .projects__wikis .projects__cards {
+  html[page="index.html"] .projects .projects__wikis .projects__cards {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
-.projects .projects__wikis .projects__cards .projects__card {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card {
   background-color: var(--color-surface-2);
   border: var(--border-base);
   border-radius: var(--border-radius-medium);
+  box-shadow: var(--box-shadow-medium);
   padding: var(--space-md);
   line-height: var(--line-height-xx-small);
   opacity: 1;
@@ -706,33 +706,33 @@ body {
   display: flex;
   flex-direction: column;
 }
-.projects .projects__wikis .projects__cards .projects__card .projects__cardImage {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card .projects__cardImage {
   margin: calc(var(--space-md) * -1);
   margin-bottom: 0;
   border-bottom: var(--border-base);
   line-height: 0;
 }
-.projects .projects__wikis .projects__cards .projects__card .projects__cardImage img {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card .projects__cardImage img {
   border: none;
   border-radius: 0px;
   width: 100%;
   height: auto;
 }
-.projects .projects__wikis .projects__cards .projects__card .projects__cardHead {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card .projects__cardHead {
   padding-block: var(--space-md) var(--space-sm);
   margin-bottom: var(--space-sm);
   border-bottom: var(--border-subtle);
 }
-.projects .projects__wikis .projects__cards .projects__card .projects__cardHead .projects__cardHeader {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card .projects__cardHead .projects__cardHeader {
   font-weight: var(--font-weight-bold);
   margin-block: 0 var(--space-xxs);
   line-height: 1;
 }
-.projects .projects__wikis .projects__cards .projects__card .projects__cardHead .projects__cardSubtitle {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card .projects__cardHead .projects__cardSubtitle {
   font-size: var(--font-size-small);
   color: var(--color-subtle);
 }
-.projects .projects__wikis .projects__cards .projects__card .projects__cardBody {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card .projects__cardBody {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -740,30 +740,30 @@ body {
   gap: var(--space-sm);
   line-height: var(--line-height-small);
 }
-.projects .projects__wikis .projects__cards .projects__card .projects__cardBody .projects__cardButtons {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card .projects__cardBody .projects__cardButtons {
   border-top: var(--border-base);
   display: flex;
   flex-direction: row;
   gap: var(--space-xs);
   padding-top: var(--space-md);
 }
-.projects .projects__wikis .projects__cards .projects__card .projects__cardBody .projects__cardButtons button {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card .projects__cardBody .projects__cardButtons button {
   width: 100%;
   font-weight: var(--font-weight-bold);
   text-align: center;
   justify-content: center;
 }
-.projects .projects__wikis .projects__cards .projects__card--hidden {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card--hidden {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
   transition: all 750ms;
 }
-.projects .projects__wikis .projects__cards .projects__card--visible {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card--visible {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
 }
-.projects .projects__wikis .projects__cards .projects__card {
+html[page="index.html"] .projects .projects__wikis .projects__cards .projects__card {
   transition-delay: calc(var(--i, 1) * 50ms);
 }/*# sourceMappingURL=styles.css.map */
