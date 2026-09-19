@@ -727,7 +727,12 @@ body {
   gap: var(--space-sm);
   line-height: var(--line-height-small);
 }
-.projects .projects__wikis .projects__cards .projects__card .projects__cardBody .projects__cardButton button {
+.projects .projects__wikis .projects__cards .projects__card .projects__cardBody .projects__cardButtons {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-xs);
+}
+.projects .projects__wikis .projects__cards .projects__card .projects__cardBody .projects__cardButtons button {
   width: 100%;
   font-weight: var(--font-weight-bold);
   text-align: center;
