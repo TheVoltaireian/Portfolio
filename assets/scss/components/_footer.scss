@@ -78,6 +78,11 @@ footer {
         @media screen and (max-width: $breakpoint-xs) {
             flex-direction: column;
             gap: var(--space-sm);
+            text-align: center;
+
+            .footer__subtitle-text {
+                text-align: center;
+            }
         }
 
         .footer__subtitle-text {
@@ -89,6 +94,18 @@ footer {
             flex-direction: row;
 			align-items: center;
             gap: var(--space-xxs);
+
+            @media screen and (max-width: $breakpoint-xs) {
+                flex-wrap: wrap;
+            }
+
+            @media screen and (max-width: $breakpoint-xxxs) {
+                flex-direction: column;
+
+                .divider {
+                    transform: rotate(-90deg);
+                }
+            }
 
             button {
                 height: 30px;

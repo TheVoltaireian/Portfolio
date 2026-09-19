@@ -1,5 +1,6 @@
 @use "../utilities/animations" as *;
 @use "../abstracts/mixins" as *;
+@use "../abstracts/breakpoints" as *;
 
 html[page="index.html"] {
     body {
@@ -41,12 +42,22 @@ html[page="index.html"] {
             animation: none;
         }
 
+        @media screen and (max-width: $breakpoint-sm) {
+            text-wrap: wrap;
+        }
+
         h1 {
             margin: auto;
             margin-block: 0;
             line-height: initial;
             font-size: var(--font-size-6x-large);
             font-weight: var(--font-weight-bold);
+
+            @media screen and (max-width: $breakpoint-sm) {
+                text-wrap: wrap;
+                word-break: break-word;
+                overflow-wrap: anywhere;
+            }
 
             a {
                 cursor: text;

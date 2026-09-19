@@ -509,12 +509,24 @@ html[page="index.html"] header {
     animation: none;
   }
 }
+@media screen and (max-width: 992px) {
+  html[page="index.html"] header {
+    text-wrap: wrap;
+  }
+}
 html[page="index.html"] header h1 {
   margin: auto;
   margin-block: 0;
   line-height: initial;
   font-size: var(--font-size-6x-large);
   font-weight: var(--font-weight-bold);
+}
+@media screen and (max-width: 992px) {
+  html[page="index.html"] header h1 {
+    text-wrap: wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
 }
 html[page="index.html"] header h1 a {
   cursor: text;
@@ -612,6 +624,10 @@ footer .footer__subtitle {
   footer .footer__subtitle {
     flex-direction: column;
     gap: var(--space-sm);
+    text-align: center;
+  }
+  footer .footer__subtitle .footer__subtitle-text {
+    text-align: center;
   }
 }
 footer .footer__subtitle .footer__subtitle-text {
@@ -622,6 +638,19 @@ footer .footer__subtitle .footer__subtitle-socials {
   flex-direction: row;
   align-items: center;
   gap: var(--space-xxs);
+}
+@media screen and (max-width: 767px) {
+  footer .footer__subtitle .footer__subtitle-socials {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 389px) {
+  footer .footer__subtitle .footer__subtitle-socials {
+    flex-direction: column;
+  }
+  footer .footer__subtitle .footer__subtitle-socials .divider {
+    transform: rotate(-90deg);
+  }
 }
 footer .footer__subtitle .footer__subtitle-socials button {
   height: 30px;
