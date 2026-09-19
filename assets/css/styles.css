@@ -728,9 +728,11 @@ body {
   line-height: var(--line-height-small);
 }
 .projects .projects__wikis .projects__cards .projects__card .projects__cardBody .projects__cardButtons {
+  border-top: var(--border-base);
   display: flex;
   flex-direction: row;
   gap: var(--space-xs);
+  padding-top: var(--space-md);
 }
 .projects .projects__wikis .projects__cards .projects__card .projects__cardBody .projects__cardButtons button {
   width: 100%;

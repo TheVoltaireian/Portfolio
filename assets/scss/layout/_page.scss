@@ -99,10 +99,13 @@ body {
                     line-height: var(--line-height-small);
 
                     .projects__cardButtons {
+                        border-top: var(--border-base);
+
                         display: flex;
                         flex-direction: row;
                         gap: var(--space-xs);
-                        
+                        padding-top: var(--space-md);
+
                         button {
                             width: 100%;
                             font-weight: var(--font-weight-bold);
