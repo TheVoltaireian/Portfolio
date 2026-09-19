@@ -1,3 +1,4 @@
+@use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
 body {
@@ -33,20 +34,79 @@ body {
         }
 
         .projects__cards {
-            display: flex;
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
 
             gap: var(--space-sm);
+
+            @media screen and (max-width: $breakpoint-sm) {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            @media screen and (max-width: $breakpoint-xs) {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
 
             .projects__card {
                 background-color: var(--color-surface-2);
                 border: var(--border-base);
                 border-radius: var(--border-radius-medium);
 
-                padding: var(--space-sm);
+                padding: var(--space-md);
+
+                line-height: var(--line-height-xx-small);
 
                 opacity: 1;
                 transform: none;
+
+                overflow: hidden;
+
+                .projects__cardImage {
+                    margin: calc(var(--space-md) * -1);
+                    margin-bottom: 0;
+
+                    img {
+                        border: none;
+                        border-bottom: var(--border-base);
+                        border-radius: 0px;
+
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .projects__cardHead {
+                    padding-block: var(--space-sm);
+                    margin-bottom: var(--space-sm);
+                    border-bottom: var(--border-subtle);
+
+                    .projects__cardHeader {
+                        font-weight: var(--font-weight-bold);
+                        margin-block: 0 var(--space-xxs);
+                        line-height: 1;
+                    }
+
+                    .projects__cardSubtitle {
+                        font-size: var(--font-size-small);
+                        color: var(--color-subtle);
+                    }
+                }
+
+                .projects__cardBody {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--space-sm);
+                    line-height: var(--line-height-small);
+
+                    .projects__cardButton {
+                        button {
+                            width: 100%;
+                            font-weight: var(--font-weight-bold);
+                            text-align: center;
+                            justify-content: center;
+                        }
+                    }
+                }
 
                 @include view-on-scroll;
                 transition-delay: calc(var(--i, 1) * 50ms);
