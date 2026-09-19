@@ -103,7 +103,8 @@ footer {
                 flex-direction: column;
 
                 .divider {
-                    transform: rotate(-90deg);
+                    writing-mode: vertical-rl; /* Top-to-bottom, right-to-left */
+                    text-orientation: mixed;
                 }
             }
 

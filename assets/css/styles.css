@@ -421,6 +421,16 @@ button.social:hover span {
   opacity: 1;
   max-width: var(--social-label-width, 20ch);
 }
+@media screen and (max-width: 389px) {
+  button.social:hover {
+    gap: 0;
+    padding: var(--space-xxs);
+  }
+  button.social:hover span {
+    opacity: 0;
+    display: none;
+  }
+}
 button.x {
   background: oklch(0% 0 0deg);
   color: var(--color-emphasized);
@@ -526,6 +536,11 @@ html[page="index.html"] header h1 {
     text-wrap: wrap;
     word-break: break-word;
     overflow-wrap: anywhere;
+  }
+}
+@media screen and (max-width: 767px) {
+  html[page="index.html"] header h1 {
+    font-size: var(--font-size-5x-large);
   }
 }
 html[page="index.html"] header h1 a {
@@ -649,7 +664,8 @@ footer .footer__subtitle .footer__subtitle-socials {
     flex-direction: column;
   }
   footer .footer__subtitle .footer__subtitle-socials .divider {
-    transform: rotate(-90deg);
+    writing-mode: vertical-rl; /* Top-to-bottom, right-to-left */
+    text-orientation: mixed;
   }
 }
 footer .footer__subtitle .footer__subtitle-socials button {

@@ -1,4 +1,6 @@
 /* Mixins */
+@use "../abstracts/breakpoints" as *;
+
 @mixin hover {
     &:hover {
         @content;
@@ -89,6 +91,18 @@
         span {
             opacity: 1;
             max-width: var(--social-label-width, 20ch);
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-xxxs) {
+        @include hover {
+            gap: 0;
+            padding: var(--space-xxs);
+
+            span {
+                opacity: 0;
+                display: none;
+            }
         }
     }
 }

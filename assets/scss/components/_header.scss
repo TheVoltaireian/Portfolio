@@ -59,6 +59,10 @@ html[page="index.html"] {
                 overflow-wrap: anywhere;
             }
 
+            @media screen and (max-width: $breakpoint-xs) {
+                font-size: var(--font-size-5x-large)
+            }
+
             a {
                 cursor: text;
 
