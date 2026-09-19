@@ -18,7 +18,7 @@ A work-in-progress portfolio/blog website that I'm working on
 - Split variables.scss into multiple files
   - breakpoints.scss (for media queries), tokens.scss (scss variables), variables.scss (:root variables)  
 - Add more links to footer
-- Set up portfolio carousel
+- <s>Set up portfolio <b>carousel</b></s> ✅
 - Transition to self-hosting fonts
   - Find a good-looking mono font
 - Add ARIA labels
