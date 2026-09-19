@@ -1,18 +1,17 @@
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
-        const hiddenModifier = Array.from(entry.target.classList).find(c => c.endsWith('--hidden'));
+        if (!entry.isIntersecting) return;
+
+        const hiddenModifier = Array.from(entry.target.classList)
+            .find((className) => className.endsWith('--hidden'));
+
+        if (!hiddenModifier) return;
+        const visibleModifier = hiddenModifier.replace('--hidden', '--visible');
         
-        if (hiddenModifier) {
-            const visibleModifier = hiddenModifier.replace('--hidden', '--visible');
-            
-            if (entry.isIntersecting) {
-                entry.target.classList.add(visibleModifier);
-            } else {
-                entry.target.classList.remove(visibleModifier);
-            }
-        }
+        entry.target.classList.add(visibleModifier);
+        observer.unobserve(entry.target);
     });
 });
 
 const hiddenModifiers = document.querySelectorAll('.projects__card--hidden, .projects__header--hidden');
-hiddenModifiers.forEach((el) => observer.observe(el));
+hiddenModifiers.forEach((element) => observer.observe(element));
