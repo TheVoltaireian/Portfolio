@@ -669,6 +669,9 @@ body {
   transform: translateX(-100%);
   transition: all 750ms;
 }
+.projects .projects__wikis .projects__header .projects__card--hidden {
+  transition: opacity 200ms, filter 750ms, transform 750ms !important;
+}
 .projects .projects__wikis .projects__header--visible {
   opacity: 1;
   filter: blur(0);
@@ -678,6 +681,10 @@ body {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-sm);
+  transition: var(--transition-hover--fast);
+}
+.projects .projects__wikis .projects__cards:hover .projects__card:not(:hover) {
+  opacity: 0.3;
 }
 @media screen and (max-width: 1280px) {
   .projects .projects__wikis .projects__cards {
@@ -758,6 +765,9 @@ body {
   filter: blur(5px);
   transform: translateX(-100%);
   transition: all 750ms;
+}
+.projects .projects__wikis .projects__cards .projects__card .projects__card--hidden {
+  transition: opacity 200ms, filter 750ms, transform 750ms !important;
 }
 .projects .projects__wikis .projects__cards .projects__card--visible {
   opacity: 1;

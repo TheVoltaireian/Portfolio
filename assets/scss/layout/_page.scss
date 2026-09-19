@@ -39,6 +39,14 @@ body {
 
             gap: var(--space-sm);
 
+            transition: var(--transition-hover--fast);
+
+            @include hover {
+                .projects__card:not(:hover) {
+                    opacity: 0.3;
+                }
+            }
+
             @media screen and (max-width: $breakpoint-md) {
                 grid-template-columns: repeat(3, minmax(0, 1fr))
             }
