@@ -676,9 +676,14 @@ body {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-sm);
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1280px) {
   .projects .projects__wikis .projects__cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 992px) {
+  .projects .projects__wikis .projects__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media screen and (max-width: 767px) {
